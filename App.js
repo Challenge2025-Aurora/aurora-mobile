@@ -6,13 +6,22 @@ import MapaScreen from './screens/MapaScreen';
 import FormularioScreen from './screens/FormularioScreen';
 import CameraScreen from './screens/CameraScreen';
 import DetalhesScreen from './screens/DetalhesScreen';
+import { Ionicons } from '@expo/vector-icons';
+import { TouchableOpacity } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          headerStyle: { backgroundColor: '#6200ee' },
+          headerTintColor: '#fff',
+          headerTitleStyle: { fontWeight: 'bold' },
+        }}
+      >
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Mapa" component={MapaScreen} />
         <Stack.Screen name="Formulário" component={FormularioScreen} />
