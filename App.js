@@ -1,12 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
-import MapaScreen from './screens/MapaScreen';
-import FormularioScreen from './screens/FormularioScreen';
 import CameraScreen from './screens/CameraScreen';
+import FormularioScreen from './screens/FormularioScreen';
 import DetalhesScreen from './screens/DetalhesScreen';
-import { Ionicons } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native';
+import MapaScreen from './screens/MapaScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,16 +14,16 @@ export default function App() {
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
-          headerStyle: { backgroundColor: '#6200ee' },
+          headerStyle: { backgroundColor: '#a27cf0' },
           headerTintColor: '#fff',
           headerTitleStyle: { fontWeight: 'bold' },
         }}
       >
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Mapa" component={MapaScreen} />
-        <Stack.Screen name="Formulário" component={FormularioScreen} />
-        <Stack.Screen name="Camera" component={CameraScreen} />
-        <Stack.Screen name="Detalhes" component={DetalhesScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: "Pátio Mottu" }} />
+        <Stack.Screen name="Camera" component={CameraScreen} options={{ title: "Câmera" }} />
+        <Stack.Screen name="Formulario" component={FormularioScreen} options={{ title: "Cadastrar Moto" }} />
+        <Stack.Screen name="Detalhes" component={DetalhesScreen} options={{ title: "Visualizar Motos" }} />
+        <Stack.Screen name="Mapa" component={MapaScreen} options={{ title: "Mapa do Pátio" }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

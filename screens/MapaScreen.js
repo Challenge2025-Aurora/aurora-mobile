@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
@@ -13,7 +13,6 @@ export default function MapaScreen() {
         alert('Permissão negada para acessar localização');
         return;
       }
-
       let loc = await Location.getCurrentPositionAsync({});
       setLocation(loc.coords);
     })();
@@ -40,13 +39,17 @@ export default function MapaScreen() {
           />
         </MapView>
       ) : (
-        <Text>Carregando localização...</Text>
+        <View style={styles.center}>
+          <Text style={styles.text}>Carregando localização...</Text>
+        </View>
       )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1 },
+  container: { flex: 1, backgroundColor: '#f9f7ff' },
   map: { flex: 1 },
+  center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  text: { color: '#a27cf0', fontSize: 18, fontWeight: 'bold' },
 });
