@@ -1,9 +1,16 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, GestureResponderEvent } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import type { Moto } from '../types/moto';
 
-export default function MotoCard({ moto, onPress }) {
+type Props = {
+  moto: Moto;
+  onPress?: (event: GestureResponderEvent) => void;
+};
+
+const MotoCard: React.FC<Props> = ({ moto, onPress }) => {
   return (
-    <TouchableOpacity style={styles.card} onPress={onPress}>
+    <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.9}>
       <View style={styles.row}>
         <MaterialCommunityIcons name="motorbike" size={36} color="#ffd86b" />
         <View style={styles.info}>
@@ -14,7 +21,9 @@ export default function MotoCard({ moto, onPress }) {
       <Text style={styles.localizacao}>Pátio: {moto.patio}</Text>
     </TouchableOpacity>
   );
-}
+};
+
+export default React.memo(MotoCard);
 
 const styles = StyleSheet.create({
   card: {
@@ -32,5 +41,5 @@ const styles = StyleSheet.create({
   info: { marginLeft: 16 },
   titulo: { fontSize: 20, color: '#a27cf0', fontWeight: 'bold' },
   placa: { fontSize: 14, color: '#888', marginTop: 4 },
-  localizacao: { color: '#bfaeeb', marginTop: 10, fontSize: 12, fontWeight: '500' }
+  localizacao: { color: '#bfaeeb', marginTop: 10, fontSize: 12, fontWeight: '500' },
 });
