@@ -1,13 +1,11 @@
-import * as React from 'react'
-import { StatusBar } from 'react-native'
-import { NavigationContainer, DefaultTheme, DarkTheme, Theme } from '@react-navigation/native'
-import AppNavigator from './src/navigation/AppNavigator'
-
-import { ThemeProvider, useTheme } from './src/theme/index'
+import * as React from 'react';
+import { StatusBar } from 'react-native';
+import { NavigationContainer, DefaultTheme, DarkTheme, Theme } from '@react-navigation/native';
+import { ThemeProvider, useTheme } from './src/theme';
+import TabNavigator from './src/navigation/TabNavigator';
 
 function NavWrapper() {
-  const { mode, colors } = useTheme()
-
+  const { mode, colors } = useTheme();
   const navTheme: Theme = {
     ...(mode === 'light' ? DefaultTheme : DarkTheme),
     colors: {
@@ -19,16 +17,16 @@ function NavWrapper() {
       border: colors.border,
       notification: colors.accent,
     },
-  }
-
+  };
+  
   return (
     <>
       <StatusBar barStyle={mode === 'light' ? 'dark-content' : 'light-content'} />
       <NavigationContainer theme={navTheme}>
-        <AppNavigator />
+        <TabNavigator />
       </NavigationContainer>
     </>
-  )
+  );
 }
 
 export default function App() {
@@ -36,5 +34,5 @@ export default function App() {
     <ThemeProvider>
       <NavWrapper />
     </ThemeProvider>
-  )
+  );
 }
