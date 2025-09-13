@@ -4,14 +4,7 @@ import CameraScreen from "../screens/CameraScreen";
 import FormularioScreen from "../screens/FormularioScreen";
 import DetalhesScreen from "../screens/DetalhesScreen";
 import MapaScreen from "../screens/MapaScreen";
-
-export type RootStackParamList = {
-  Home: undefined;
-  Camera: undefined;
-  Formulario: undefined;
-  Detalhes: undefined;
-  Mapa: undefined;
-};
+import type { RootStackParamList } from "./types";
 
 type RouteDef<Name extends keyof RootStackParamList> = {
   name: Name;

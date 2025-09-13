@@ -1,7 +1,8 @@
 import * as React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { routes, type RootStackParamList } from "./routes";
+import { routes } from "./routes";
 import { useStackOptions } from "./useStackOptions";
+import type { RootStackParamList } from "./types";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
