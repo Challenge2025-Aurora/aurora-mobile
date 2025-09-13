@@ -3,7 +3,7 @@ import { StatusBar } from 'react-native'
 import { NavigationContainer, DefaultTheme, DarkTheme, Theme } from '@react-navigation/native'
 import AppNavigator from './src/navigation/AppNavigator'
 
-import { ThemeProvider, useTheme } from './src/context/ThemeContext'
+import { ThemeProvider, useTheme } from './src/theme/index'
 
 function NavWrapper() {
   const { mode, colors } = useTheme()

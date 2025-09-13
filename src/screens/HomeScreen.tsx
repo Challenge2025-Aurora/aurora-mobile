@@ -2,7 +2,8 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { MaterialCommunityIcons, Feather, Entypo } from "@expo/vector-icons";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/AppNavigator";
-import { useTheme } from "../context/ThemeContext";
+
+import { useTheme } from "../theme/index";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 

@@ -6,7 +6,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import MotoCard from "../components/MotoCard";
 import type { Moto } from "../types/moto";
-import { useTheme } from "../context/ThemeContext";
+
+import { useTheme } from "../theme/index";
 
 export default function DetalhesScreen() {
   const { colors } = useTheme();

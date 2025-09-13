@@ -8,7 +8,8 @@ import CameraScreen from "../screens/CameraScreen";
 import FormularioScreen from "../screens/FormularioScreen";
 import DetalhesScreen from "../screens/DetalhesScreen";
 import MapaScreen from "../screens/MapaScreen";
-import { useTheme } from "../context/ThemeContext";
+
+import { useTheme } from "../theme/index";
 
 export type RootStackParamList = {
   Home: undefined;

@@ -7,7 +7,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/AppNavigator";
 import type { Moto } from "../types/moto";
-import { useTheme } from "../context/ThemeContext";
+
+import { useTheme } from "../theme/index";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Formulario">;
 
