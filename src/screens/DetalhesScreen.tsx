@@ -1,21 +1,15 @@
 import { useEffect, useState } from "react";
 import {
-  View,
-  FlatList,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  Modal,
-  TextInput,
-  Alert,
+  View, FlatList, StyleSheet, Text, TouchableOpacity, Modal, TextInput, Alert
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
-
 import MotoCard from "../components/MotoCard";
 import type { Moto } from "../types/moto";
+import { useTheme } from "../context/ThemeContext";
 
 export default function DetalhesScreen() {
+  const { colors } = useTheme();
   const [motos, setMotos] = useState<Moto[]>([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [editIndex, setEditIndex] = useState<number | null>(null);
@@ -23,13 +17,10 @@ export default function DetalhesScreen() {
   const [placa, setPlaca] = useState("");
   const [patio, setPatio] = useState("");
 
-  useEffect(() => {
-    void carregarMotos();
-  }, []);
-
+  useEffect(() => { void carregarMotos(); }, []);
   const carregarMotos = async () => {
     const data = await AsyncStorage.getItem("motos");
-    setMotos(data ? (JSON.parse(data) as Moto[]) : []);
+    setMotos(data ? JSON.parse(data) : []);
   };
 
   const apagarMoto = async (idx: number) => {
@@ -39,28 +30,21 @@ export default function DetalhesScreen() {
   };
 
   const abrirEditar = (item: Moto, idx: number) => {
-    setModelo(item.modelo);
-    setPlaca(item.placa);
-    setPatio(item.patio);
-    setEditIndex(idx);
-    setModalVisible(true);
+    setModelo(item.modelo); setPlaca(item.placa); setPatio(item.patio);
+    setEditIndex(idx); setModalVisible(true);
   };
 
   const salvarEdicao = async () => {
     if (!modelo || !placa || !patio || editIndex == null) {
-      Alert.alert("Preencha todos os campos!");
-      return;
+      Alert.alert("Preencha todos os campos!"); return;
     }
-    const novasMotos = motos.map((m, idx) =>
-      idx === editIndex ? { modelo, placa, patio } : m
-    );
+    const novasMotos = motos.map((m, idx) => idx === editIndex ? { modelo, placa, patio } : m);
     await AsyncStorage.setItem("motos", JSON.stringify(novasMotos));
-    setMotos(novasMotos);
-    setModalVisible(false);
+    setMotos(novasMotos); setModalVisible(false);
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: colors.bg }]}>
       <FlatList
         data={motos}
         keyExtractor={(_, idx) => idx.toString()}
@@ -68,64 +52,46 @@ export default function DetalhesScreen() {
           <View style={styles.itemRow}>
             <MotoCard moto={item} />
             <View style={styles.btns}>
-              <TouchableOpacity
-                style={styles.iconBtn}
-                onPress={() => abrirEditar(item, index)}
-              >
-                <Feather name="edit-3" size={22} color="#a27cf0" />
+              <TouchableOpacity style={[styles.iconBtn, { backgroundColor: colors.bgSecundary }]} onPress={() => abrirEditar(item, index)}>
+                <Feather name="edit-3" size={22} color={colors.primary} />
               </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.iconBtn}
-                onPress={() => apagarMoto(index)}
-              >
-                <MaterialCommunityIcons
-                  name="trash-can-outline"
-                  size={22}
-                  color="#ffd86b"
-                />
+              <TouchableOpacity style={[styles.iconBtn, { backgroundColor: colors.bgSecundary }]} onPress={() => apagarMoto(index)}>
+                <MaterialCommunityIcons name="trash-can-outline" size={22} color={colors.accent} />
               </TouchableOpacity>
             </View>
           </View>
         )}
         ListEmptyComponent={
-          <Text style={styles.emptyText}>Nenhuma moto cadastrada ainda.</Text>
+          <Text style={[styles.emptyText, { color: colors.primary }]}>
+            Nenhuma moto cadastrada ainda.
+          </Text>
         }
       />
 
       <Modal visible={modalVisible} transparent animationType="slide">
-        <View style={styles.modalBg}>
-          <View style={styles.modal}>
-            <Text style={styles.modalTitle}>Editar Moto</Text>
+        <View style={[styles.modalBg, { backgroundColor: colors.modalOverlay }]}>
+          <View style={[styles.modal, { backgroundColor: colors.bgSecundary }]}>
+            <Text style={[styles.modalTitle, { color: colors.primary }]}>Editar Moto</Text>
+
             <TextInput
-              style={styles.input}
-              value={modelo}
-              onChangeText={setModelo}
-              placeholder="Modelo"
-              placeholderTextColor="#bfaeeb"
+              style={[styles.input, { backgroundColor: colors.bgSecundary, color: colors.text, borderColor: colors.border }]}
+              value={modelo} onChangeText={setModelo} placeholder="Modelo" placeholderTextColor={colors.placeholder}
             />
             <TextInput
-              style={styles.input}
-              value={placa}
-              onChangeText={setPlaca}
-              placeholder="Placa"
-              placeholderTextColor="#bfaeeb"
+              style={[styles.input, { backgroundColor: colors.bgSecundary, color: colors.text, borderColor: colors.border }]}
+              value={placa} onChangeText={setPlaca} placeholder="Placa" placeholderTextColor={colors.placeholder}
             />
             <TextInput
-              style={styles.input}
-              value={patio}
-              onChangeText={setPatio}
-              placeholder="Pátio"
-              placeholderTextColor="#bfaeeb"
+              style={[styles.input, { backgroundColor: colors.bgSecundary, color: colors.text, borderColor: colors.border }]}
+              value={patio} onChangeText={setPatio} placeholder="Pátio" placeholderTextColor={colors.placeholder}
             />
+
             <View style={styles.modalBtns}>
-              <TouchableOpacity style={styles.btnSave} onPress={salvarEdicao}>
-                <Text style={styles.btnSaveText}>Salvar</Text>
+              <TouchableOpacity style={[styles.btnSave, { backgroundColor: colors.primary }] } onPress={salvarEdicao}>
+                <Text style={[styles.btnSaveText, { color: colors.textOnPrimary }]}>Salvar</Text>
               </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.btnCancel}
-                onPress={() => setModalVisible(false)}
-              >
-                <Text style={styles.btnCancelText}>Cancelar</Text>
+              <TouchableOpacity style={[styles.btnCancel, { backgroundColor: colors.accent }]} onPress={() => setModalVisible(false)}>
+                <Text style={[styles.btnCancelText, { color: colors.primary }]}>Cancelar</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -136,67 +102,18 @@ export default function DetalhesScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#f9f7ff" },
-  emptyText: {
-    textAlign: "center",
-    marginTop: 60,
-    color: "#a27cf0",
-    fontWeight: "500",
-    fontSize: 16,
-  },
+  container: { flex: 1 },
+  emptyText: { textAlign: "center", marginTop: 60, fontWeight: "500", fontSize: 16 },
   itemRow: { marginBottom: 8, marginTop: 4 },
   btns: { flexDirection: "row", position: "absolute", top: 25, right: 35 },
-  iconBtn: {
-    marginLeft: 18,
-    backgroundColor: "#ede7ff",
-    borderRadius: 10,
-    padding: 7,
-  },
-  modalBg: {
-    flex: 1,
-    backgroundColor: "rgba(0,0,0,0.15)",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  modal: {
-    backgroundColor: "#fff",
-    padding: 26,
-    borderRadius: 16,
-    width: "88%",
-    elevation: 6,
-    alignItems: "center",
-  },
-  modalTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#a27cf0",
-    marginBottom: 18,
-  },
-  input: {
-    backgroundColor: "#ede7ff",
-    borderRadius: 10,
-    padding: 10,
-    marginTop: 9,
-    width: "100%",
-    fontSize: 15,
-    color: "#5f4c8c",
-    borderWidth: 1,
-    borderColor: "#e0d5fd",
-  },
+  iconBtn: { marginLeft: 18, borderRadius: 10, padding: 7 },
+  modalBg: { flex: 1, justifyContent: "center", alignItems: "center" },
+  modal: { padding: 26, borderRadius: 16, width: "88%", elevation: 6, alignItems: "center" },
+  modalTitle: { fontSize: 20, fontWeight: "bold", marginBottom: 18 },
+  input: { borderRadius: 10, padding: 10, marginTop: 9, width: "100%", fontSize: 15, borderWidth: 1 },
   modalBtns: { flexDirection: "row", justifyContent: "center", marginTop: 22 },
-  btnSave: {
-    backgroundColor: "#a27cf0",
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 28,
-    marginRight: 18,
-  },
-  btnSaveText: { color: "#fff", fontSize: 16, fontWeight: "bold" },
-  btnCancel: {
-    backgroundColor: "#ffd86b",
-    borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 22,
-  },
-  btnCancelText: { color: "#a27cf0", fontSize: 16, fontWeight: "bold" },
+  btnSave: { borderRadius: 10, paddingVertical: 10, paddingHorizontal: 28, marginRight: 18 },
+  btnSaveText: { fontSize: 16, fontWeight: "bold" },
+  btnCancel: { borderRadius: 10, paddingVertical: 10, paddingHorizontal: 22 },
+  btnCancelText: { fontSize: 16, fontWeight: "bold" },
 });
