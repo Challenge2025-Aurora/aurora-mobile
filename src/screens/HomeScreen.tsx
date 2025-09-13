@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { MaterialCommunityIcons, Feather, Entypo } from "@expo/vector-icons";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
-import type { RootStackParamList } from "../navigation/AppNavigator";
+import type { RootStackParamList } from "../navigation/routes";
 
 import { useTheme } from "../theme/index";
 

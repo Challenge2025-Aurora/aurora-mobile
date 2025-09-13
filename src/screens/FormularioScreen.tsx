@@ -5,7 +5,7 @@ import {
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
-import type { RootStackParamList } from "../navigation/AppNavigator";
+import type { RootStackParamList } from "../navigation/routes";
 import type { Moto } from "../types/moto";
 
 import { useTheme } from "../theme/index";
