@@ -2,51 +2,68 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { MaterialCommunityIcons, Feather, Entypo } from "@expo/vector-icons";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { RootStackParamList } from "../navigation/AppNavigator";
+import { useTheme } from "../context/ThemeContext";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Home">;
 
 export default function HomeScreen({ navigation }: Props) {
+  const { colors } = useTheme();
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Gestão de Motos - Pátio Mottu</Text>
+    <View style={[styles.container, { backgroundColor: colors.bg }]}>
+      <Text style={[styles.title, { color: colors.primary }]}>
+        Gestão de Motos - Pátio Mottu
+      </Text>
+
       <View style={styles.row}>
         <TouchableOpacity
-          style={[styles.card, { backgroundColor: "#ede7ff" }]}
+          style={[
+            styles.card,
+            { backgroundColor: colors.bgSecundary, shadowColor: colors.shadow },
+          ]}
           onPress={() => navigation.navigate("Formulario")}
         >
-          <Feather name="plus-circle" size={32} color="#a27cf0" />
-          <Text style={styles.label}>Cadastrar Moto</Text>
+          <Feather name="plus-circle" size={32} color={colors.primary} />
+          <Text style={[styles.label, { color: colors.text }]}>Cadastrar Moto</Text>
         </TouchableOpacity>
+
         <TouchableOpacity
-          style={[styles.card, { backgroundColor: "#ffd86b" }]}
+          style={[
+            styles.card,
+            { backgroundColor: colors.accent, shadowColor: colors.shadow },
+          ]}
           onPress={() => navigation.navigate("Mapa")}
         >
           <MaterialCommunityIcons
             name="map-marker-radius-outline"
             size={32}
-            color="#a27cf0"
+            color={colors.primary}
           />
-          <Text style={styles.label}>Mapa do Pátio</Text>
+          <Text style={[styles.label, { color: colors.text }]}>Mapa do Pátio</Text>
         </TouchableOpacity>
       </View>
+
       <View style={styles.row}>
         <TouchableOpacity
-          style={[styles.card, { backgroundColor: "#ede7ff" }]}
+          style={[
+            styles.card,
+            { backgroundColor: colors.bgSecundary, shadowColor: colors.shadow },
+          ]}
           onPress={() => navigation.navigate("Camera")}
         >
-          <MaterialCommunityIcons
-            name="camera-outline"
-            size={32}
-            color="#a27cf0"
-          />
-          <Text style={styles.label}>Câmera</Text>
+          <MaterialCommunityIcons name="camera-outline" size={32} color={colors.primary} />
+          <Text style={[styles.label, { color: colors.text }]}>Câmera</Text>
         </TouchableOpacity>
+
         <TouchableOpacity
-          style={[styles.card, { backgroundColor: "#ffd86b" }]}
+          style={[
+            styles.card,
+            { backgroundColor: colors.accent, shadowColor: colors.shadow },
+          ]}
           onPress={() => navigation.navigate("Detalhes")}
         >
-          <Entypo name="list" size={32} color="#a27cf0" />
-          <Text style={styles.label}>Visualizar Motos</Text>
+          <Entypo name="list" size={32} color={colors.primary} />
+          <Text style={[styles.label, { color: colors.text }]}>Visualizar Motos</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -54,19 +71,8 @@ export default function HomeScreen({ navigation }: Props) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#f9f7ff",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: "bold",
-    color: "#a27cf0",
-    marginBottom: 36,
-    textAlign: "center",
-  },
+  container: { flex: 1, justifyContent: "center", alignItems: "center" },
+  title: { fontSize: 22, fontWeight: "bold", marginBottom: 36, textAlign: "center" },
   row: { flexDirection: "row", marginBottom: 24 },
   card: {
     flex: 1,
@@ -76,11 +82,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     elevation: 4,
-    shadowColor: "#a27cf0",
     shadowOpacity: 0.14,
     shadowRadius: 6,
     minWidth: 150,
     maxWidth: 180,
   },
-  label: { marginTop: 12, fontSize: 16, fontWeight: "600", color: "#5f4c8c" },
+  label: { marginTop: 12, fontSize: 16, fontWeight: "600" },
 });
