@@ -1,23 +1,18 @@
 import { useState } from "react";
 import {
-  View,
-  Text,
-  TextInput,
-  StyleSheet,
-  TouchableOpacity,
-  Alert,
-  KeyboardAvoidingView,
-  Platform,
+  View, Text, TextInput, StyleSheet, TouchableOpacity, Alert,
+  KeyboardAvoidingView, Platform
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
-
 import type { RootStackParamList } from "../navigation/AppNavigator";
 import type { Moto } from "../types/moto";
+import { useTheme } from "../context/ThemeContext";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Formulario">;
 
 export default function FormularioScreen({ navigation }: Props) {
+  const { colors } = useTheme();
   const [modelo, setModelo] = useState("");
   const [placa, setPlaca] = useState("");
   const [patio, setPatio] = useState("");
@@ -29,9 +24,7 @@ export default function FormularioScreen({ navigation }: Props) {
     }
     const novaMoto: Moto = { modelo, placa, patio };
     const dadosAntigos = await AsyncStorage.getItem("motos");
-    const lista: Moto[] = dadosAntigos
-      ? (JSON.parse(dadosAntigos) as Moto[])
-      : [];
+    const lista: Moto[] = dadosAntigos ? JSON.parse(dadosAntigos) : [];
     lista.push(novaMoto);
     await AsyncStorage.setItem("motos", JSON.stringify(lista));
     navigation.goBack();
@@ -39,63 +32,73 @@ export default function FormularioScreen({ navigation }: Props) {
 
   return (
     <KeyboardAvoidingView
-      style={styles.container}
+      style={[styles.container, { backgroundColor: colors.bg }]}
       behavior={Platform.OS === "ios" ? "padding" : undefined}
     >
-      <Text style={styles.label}>Modelo:</Text>
+      <Text style={[styles.label, { color: colors.primary }]}>Modelo:</Text>
       <TextInput
-        style={styles.input}
+        style={[
+          styles.input,
+          { backgroundColor: colors.bgSecundary, color: colors.text, borderColor: colors.border }
+        ]}
         value={modelo}
         onChangeText={setModelo}
         placeholder="Ex: Sport 110i"
-        placeholderTextColor="#bfaeeb"
+        placeholderTextColor={colors.placeholder}
       />
-      <Text style={styles.label}>Placa:</Text>
+
+      <Text style={[styles.label, { color: colors.primary }]}>Placa:</Text>
       <TextInput
-        style={styles.input}
+        style={[
+          styles.input,
+          { backgroundColor: colors.bgSecundary, color: colors.text, borderColor: colors.border }
+        ]}
         value={placa}
         onChangeText={setPlaca}
         placeholder="Ex: ABC-1234"
-        placeholderTextColor="#bfaeeb"
+        placeholderTextColor={colors.placeholder}
       />
-      <Text style={styles.label}>Pátio:</Text>
+
+      <Text style={[styles.label, { color: colors.primary }]}>Pátio:</Text>
       <TextInput
-        style={styles.input}
+        style={[
+          styles.input,
+          { backgroundColor: colors.bgSecundary, color: colors.text, borderColor: colors.border }
+        ]}
         value={patio}
         onChangeText={setPatio}
         placeholder="Ex: Centro-SP"
-        placeholderTextColor="#bfaeeb"
+        placeholderTextColor={colors.placeholder}
       />
-      <TouchableOpacity style={styles.btn} onPress={salvar}>
-        <Text style={styles.btnText}>Salvar</Text>
+
+      <TouchableOpacity
+        style={[styles.btn, { backgroundColor: colors.primary, shadowColor: colors.shadow }]}
+        onPress={salvar}
+      >
+        <Text style={[styles.btnText, { color: colors.textOnPrimary }]}>Salvar</Text>
       </TouchableOpacity>
     </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#f9f7ff", padding: 24 },
-  label: { color: "#a27cf0", fontSize: 16, marginTop: 20, fontWeight: "600" },
+  container: { flex: 1, padding: 24 },
+  label: { fontSize: 16, marginTop: 20, fontWeight: "600" },
   input: {
-    backgroundColor: "#ede7ff",
     borderRadius: 14,
     padding: 12,
     marginTop: 6,
     fontSize: 16,
-    color: "#5f4c8c",
     borderWidth: 1,
-    borderColor: "#e0d5fd",
   },
   btn: {
-    backgroundColor: "#a27cf0",
     borderRadius: 14,
     padding: 16,
     marginTop: 36,
     alignItems: "center",
-    shadowColor: "#a27cf0",
     shadowOpacity: 0.17,
     shadowRadius: 5,
     elevation: 2,
   },
-  btnText: { color: "#fff", fontSize: 17, fontWeight: "bold" },
+  btnText: { fontSize: 17, fontWeight: "bold" },
 });
