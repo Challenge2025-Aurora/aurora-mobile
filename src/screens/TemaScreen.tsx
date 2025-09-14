@@ -16,9 +16,14 @@ export default function TemaScreen(_props: OthersStackScreenProps<"Tema">) {
   const { mode, set, colors } = useTheme();
 
   const opts: Option[] = [
-    { key: "system", title: "Seguir o sistema", subtitle: "Ajusta automaticamente", icon: "theme-light-dark" },
+    {
+      key: "system",
+      title: "Seguir o sistema",
+      subtitle: "Ajusta automaticamente",
+      icon: "theme-light-dark",
+    },
     { key: "light", title: "Claro", icon: "white-balance-sunny" },
-    { key: "dark",  title: "Escuro", icon: "weather-night" },
+    { key: "dark", title: "Escuro", icon: "weather-night" },
   ];
 
   return (
@@ -48,9 +53,15 @@ export default function TemaScreen(_props: OthersStackScreenProps<"Tema">) {
                   style={{ marginRight: 10 }}
                 />
                 <View>
-                  <Text style={[styles.title, { color: colors.text }]}>{o.title}</Text>
+                  <Text style={[styles.title, { color: colors.text }]}>
+                    {o.title}
+                  </Text>
                   {o.subtitle ? (
-                    <Text style={[styles.subtitle, { color: colors.placeholder }]}>{o.subtitle}</Text>
+                    <Text
+                      style={[styles.subtitle, { color: colors.placeholder }]}
+                    >
+                      {o.subtitle}
+                    </Text>
                   ) : null}
                 </View>
               </View>

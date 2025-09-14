@@ -14,9 +14,15 @@ export default function MapaScreen() {
       {loading ? (
         <LoadingState title="Carregando localização..." />
       ) : coords ? (
-        <CurrentLocationMap coords={{ latitude: coords.latitude, longitude: coords.longitude }} />
+        <CurrentLocationMap
+          coords={{ latitude: coords.latitude, longitude: coords.longitude }}
+        />
       ) : (
-        <EmptyState title="Sem localização" subtitle={error ?? "Tente novamente"} iconName="map-marker-off" />
+        <EmptyState
+          title="Sem localização"
+          subtitle={error ?? "Tente novamente"}
+          iconName="map-marker-off"
+        />
       )}
     </Screen>
   );

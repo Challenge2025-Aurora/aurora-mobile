@@ -11,7 +11,6 @@ interface ConfirmDialogProps {
   cancelLabel?: string;
   icon?: ReactNode;
 
-  // novos opcionais para suportar tema
   overlayColor?: string;
   dialogBgColor?: string;
   cancelBgColor?: string;
@@ -82,10 +81,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(0,0,0,0.4)", // sobrescrito se overlayColor for passado
+    backgroundColor: "rgba(0,0,0,0.4)",
   },
   dialog: {
-    backgroundColor: "white", // sobrescrito se dialogBgColor for passado
+    backgroundColor: "white",
     padding: 20,
     borderRadius: 12,
     width: "80%",

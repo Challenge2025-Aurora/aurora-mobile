@@ -1,7 +1,10 @@
 import * as React from "react";
 import { SectionList, Text, View, StyleSheet } from "react-native";
 
-import type { OthersStackScreenProps, OthersStackParamList } from "../navigation/types";
+import type {
+  OthersStackScreenProps,
+  OthersStackParamList,
+} from "../navigation/types";
 import { useTheme } from "../theme";
 
 import Screen from "../components/common/Screen";
@@ -15,14 +18,16 @@ import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type RouteName = keyof OthersStackParamList;
-type Item = { 
-  key: string; 
+type Item = {
+  key: string;
   title: string;
-  route: RouteName; 
-  icon: string
+  route: RouteName;
+  icon: string;
 };
 
-export default function OutrosScreen({ navigation }: OthersStackScreenProps<"OutrosHome">) {
+export default function OutrosScreen({
+  navigation,
+}: OthersStackScreenProps<"OutrosHome">) {
   const { colors } = useTheme();
   const tabBarHeight = useBottomTabBarHeight();
   const insets = useSafeAreaInsets();
@@ -34,16 +39,41 @@ export default function OutrosScreen({ navigation }: OthersStackScreenProps<"Out
     {
       title: "Preferências",
       data: [
-        { key: "idioma", title: "Mudar idioma", route: "Idioma", icon: "translate" },
-        { key: "tema", title: "Mudar tema", route: "Tema", icon: "theme-light-dark" },
+        {
+          key: "idioma",
+          title: "Mudar idioma",
+          route: "Idioma",
+          icon: "translate",
+        },
+        {
+          key: "tema",
+          title: "Mudar tema",
+          route: "Tema",
+          icon: "theme-light-dark",
+        },
       ],
     },
     {
       title: "Sobre",
       data: [
-        { key: "sobre", title: "Sobre o projeto", route: "Sobre", icon: "information-outline" },
-        { key: "integrantes", title: "Integrantes", route: "Integrantes", icon: "account-group-outline" },
-        { key: "tecnologias", title: "Tecnologias usadas", route: "Tecnologias", icon: "tools" },
+        {
+          key: "sobre",
+          title: "Sobre o projeto",
+          route: "Sobre",
+          icon: "information-outline",
+        },
+        {
+          key: "integrantes",
+          title: "Integrantes",
+          route: "Integrantes",
+          icon: "account-group-outline",
+        },
+        {
+          key: "tecnologias",
+          title: "Tecnologias usadas",
+          route: "Tecnologias",
+          icon: "tools",
+        },
       ],
     },
   ];
@@ -66,9 +96,14 @@ export default function OutrosScreen({ navigation }: OthersStackScreenProps<"Out
       <SectionList<Item>
         sections={sections}
         keyExtractor={(item) => item.key}
-        contentContainerStyle={[styles.listContent, { paddingBottom: listPaddingBottom }]}
+        contentContainerStyle={[
+          styles.listContent,
+          { paddingBottom: listPaddingBottom },
+        ]}
         renderSectionHeader={({ section }) => (
-          <Text style={[styles.sectionTitle, { color: colors.text }]}>{section.title}</Text>
+          <Text style={[styles.sectionTitle, { color: colors.text }]}>
+            {section.title}
+          </Text>
         )}
         renderItem={({ item }) => (
           <ListRow
@@ -97,8 +132,13 @@ export default function OutrosScreen({ navigation }: OthersStackScreenProps<"Out
         onCancel={() => setConfirmVisible(false)}
         confirmLabel="Sair"
         cancelLabel="Cancelar"
-        icon={<MaterialCommunityIcons name="logout" size={28} color={colors.primary} />}
-
+        icon={
+          <MaterialCommunityIcons
+            name="logout"
+            size={28}
+            color={colors.primary}
+          />
+        }
         overlayColor={colors.modalOverlay}
         dialogBgColor={colors.bgSecundary}
         cancelBgColor={colors.bg}
