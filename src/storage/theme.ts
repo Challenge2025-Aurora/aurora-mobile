@@ -5,7 +5,7 @@ const KEY = '@theme';
 
 export async function getThemeMode(): Promise<Mode> {
   const v = await AsyncStorage.getItem(KEY);
-  return v === 'dark' || v === 'light' ? (v as Mode) : 'light';
+  return v === 'dark' || v === 'light' ? (v as Mode) : 'dark';
 }
 
 export async function setThemeMode(mode: Mode) {

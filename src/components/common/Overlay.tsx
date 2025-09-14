@@ -25,7 +25,8 @@ export default function Overlay({
 }
 
 const styles = StyleSheet.create({
-  base: { position: "absolute", width: "100%", alignItems: "center" },
+  // ⬇️ ancorado nas laterais para ocupar toda a largura do pai
+  base: { position: "absolute", left: 0, right: 0, alignItems: "center" },
   bottom: { bottom: 40 },
   top: { top: 40 },
 });

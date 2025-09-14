@@ -39,9 +39,9 @@ export default function HomeScreen({ navigation }: Props) {
           <MaterialCommunityIcons
             name="map-marker-radius-outline"
             size={32}
-            color={colors.primary}
+            color={colors.bgSecundary}
           />
-          <Text style={[styles.label, { color: colors.textOnPrimary }]}>Mapa do Pátio</Text>
+          <Text style={[styles.label, { color: colors.bgSecundary }]}>Mapa do Pátio</Text>
         </TouchableOpacity>
       </View>
 
@@ -64,8 +64,8 @@ export default function HomeScreen({ navigation }: Props) {
           ]}
           onPress={() => navigation.navigate("Detalhes")}
         >
-          <Entypo name="list" size={32} color={colors.primary} />
-          <Text style={[styles.label, { color: colors.textOnPrimary }]}>Visualizar Motos</Text>
+          <Entypo name="list" size={32} color={colors.bgSecundary} />
+          <Text style={[styles.label, { color: colors.bgSecundary }]}>Visualizar Motos</Text>
         </TouchableOpacity>
       </View>
     </Screen>
