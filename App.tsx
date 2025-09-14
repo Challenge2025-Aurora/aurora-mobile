@@ -6,6 +6,7 @@ import TabNavigator from './src/navigation/TabNavigator';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import * as NavigationBar from 'expo-navigation-bar';
 import { setStatusBarTranslucent } from 'expo-status-bar';
+import { LanguageProvider } from './src/i18n';
 
 function NavWrapper() {
   const { mode, colors } = useTheme();
@@ -41,9 +42,11 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
+        <LanguageProvider>
       <ThemeProvider>
         <NavWrapper />
       </ThemeProvider>
+        </LanguageProvider>
     </SafeAreaProvider>
   );
 }
