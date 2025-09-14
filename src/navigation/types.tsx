@@ -8,6 +8,13 @@ export type MainStackParamList = {
   Formulario: undefined;
   Detalhes: undefined;
   Mapa: undefined;
+
+  Operacao: undefined;
+  Alertas: undefined;
+  Inventario: undefined;
+  CheckinCheckout: undefined;
+  Eventos: undefined;
+  EditorPlanta: undefined; // talvez eu nem implemente essa
 };
 
 export type ProfileStackParamList = { PerfilHome: undefined };

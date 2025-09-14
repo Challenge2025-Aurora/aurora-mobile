@@ -1,10 +1,10 @@
 import * as React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useTheme } from "../theme";
-import type { OthersStackScreenProps } from "../navigation/types";
-import Screen from "../components/common/Screen";
-import { useTranslation } from "../i18n";
+import { useTheme } from "../../theme";
+import type { OthersStackScreenProps } from "../../navigation/types";
+import Screen from "../../components/common/Screen";
+import { useTranslation } from "../../i18n";
 
 type Option = {
   key: "light" | "dark" | "system";

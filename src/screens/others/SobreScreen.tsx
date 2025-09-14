@@ -1,6 +1,6 @@
 import * as React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { useTheme } from "../theme";
+import { useTheme } from "../../theme";
 
 export default function SobreScreen() {
   const { colors } = useTheme();

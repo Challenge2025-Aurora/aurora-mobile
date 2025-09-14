@@ -3,12 +3,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import type { OthersStackParamList } from './types';
 import { useStackOptions } from './useStackOptions';
 
-import OutrosScreen from '../screens/OutrosScreen';
-import IdiomaScreen from '../screens/IdiomaScreen';
-import TemaScreen from '../screens/TemaScreen';
-import SobreScreen from '../screens/SobreScreen';
-import IntegrantesScreen from '../screens/IntegrantesScreen';
-import TecnologiasScreen from '../screens/TecnologiasScreen';
+import OutrosScreen from '../screens/others/OutrosScreen';
+import IdiomaScreen from '../screens/others/IdiomaScreen';
+import TemaScreen from '../screens/others/TemaScreen';
+import SobreScreen from '../screens/others/SobreScreen';
+import IntegrantesScreen from '../screens/others/IntegrantesScreen';
+import TecnologiasScreen from '../screens/others/TecnologiasScreen';
 
 const Stack = createNativeStackNavigator<OthersStackParamList>();
 

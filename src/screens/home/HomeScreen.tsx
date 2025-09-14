@@ -2,10 +2,10 @@ import * as React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { MaterialCommunityIcons, Feather, Entypo } from "@expo/vector-icons";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
-import type { MainStackParamList } from "../navigation/types";
-import Screen from "../components/common/Screen";
-import { useTheme } from "../theme/index";
-import { useTranslation } from "../i18n";
+import type { MainStackParamList } from "../../navigation/types";
+import Screen from "../../components/common/Screen";
+import { useTheme } from "../../theme/index";
+import { useTranslation } from "../../i18n";
 
 type Props = NativeStackScreenProps<MainStackParamList, "Home">;
 
@@ -54,6 +54,57 @@ export default function HomeScreen({ navigation }: Props) {
         >
           <Entypo name="list" size={32} color={colors.bgSecundary} />
           <Text style={[styles.label, { color: colors.bgSecundary }]}>{t("home.visualizar_motos")}</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.row}>
+        <TouchableOpacity
+          style={[styles.card, { backgroundColor: colors.bgSecundary, shadowColor: colors.shadow }]}
+          onPress={() => navigation.navigate("Operacao")}
+        >
+          <MaterialCommunityIcons name="cog-outline" size={32} color={colors.primary} />
+          <Text style={[styles.label, { color: colors.text }]}>{t("home.operacao")}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.card, { backgroundColor: colors.accent, shadowColor: colors.shadow }]}
+          onPress={() => navigation.navigate("Alertas")}
+        >
+          <MaterialCommunityIcons name="bell-outline" size={32} color={colors.bgSecundary} />
+          <Text style={[styles.label, { color: colors.bgSecundary }]}>{t("home.alertas")}</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.row}>
+        <TouchableOpacity
+          style={[styles.card, { backgroundColor: colors.bgSecundary, shadowColor: colors.shadow }]}
+          onPress={() => navigation.navigate("Inventario")}
+        >
+          <MaterialCommunityIcons name="clipboard-list-outline" size={32} color={colors.primary} />
+          <Text style={[styles.label, { color: colors.text }]}>{t("home.inventario")}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.card, { backgroundColor: colors.accent, shadowColor: colors.shadow }]}
+          onPress={() => navigation.navigate("CheckinCheckout")}
+        >
+          <MaterialCommunityIcons name="swap-horizontal" size={32} color={colors.bgSecundary} />
+          <Text style={[styles.label, { color: colors.bgSecundary }]}>{t("home.checkin_checkout")}</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.row}>
+        <TouchableOpacity
+          style={[styles.card, { backgroundColor: colors.bgSecundary, shadowColor: colors.shadow }]}
+          onPress={() => navigation.navigate("Eventos")}
+        >
+          <MaterialCommunityIcons name="history" size={32} color={colors.primary} />
+          <Text style={[styles.label, { color: colors.text }]}>{t("home.eventos")}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.card, { backgroundColor: colors.accent, shadowColor: colors.shadow }]}
+          onPress={() => navigation.navigate("EditorPlanta")}
+        >
+          <MaterialCommunityIcons name="vector-square" size={32} color={colors.bgSecundary} />
+          <Text style={[styles.label, { color: colors.bgSecundary }]}>{t("home.editor_planta")}</Text>
         </TouchableOpacity>
       </View>
     </Screen>

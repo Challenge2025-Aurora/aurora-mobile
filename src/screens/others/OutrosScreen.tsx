@@ -4,19 +4,19 @@ import { SectionList, Text, View, StyleSheet } from "react-native";
 import type {
   OthersStackScreenProps,
   OthersStackParamList,
-} from "../navigation/types";
-import { useTheme } from "../theme";
+} from "../../navigation/types";
+import { useTheme } from "../../theme";
 
-import Screen from "../components/common/Screen";
-import Overlay from "../components/common/Overlay";
-import ListRow from "../components/common/ListRow";
-import PrimaryButton from "../components/common/PrimaryButton";
-import ConfirmDialog from "../components/common/ConfirmDialog";
+import Screen from "../../components/common/Screen";
+import Overlay from "../../components/common/Overlay";
+import ListRow from "../../components/common/ListRow";
+import PrimaryButton from "../../components/common/PrimaryButton";
+import ConfirmDialog from "../../components/common/ConfirmDialog";
 
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useTranslation } from "../i18n";
+import { useTranslation } from "../../i18n";
 
 type RouteName = keyof OthersStackParamList;
 type Item = {
