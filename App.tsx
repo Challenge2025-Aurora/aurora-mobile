@@ -4,6 +4,8 @@ import { NavigationContainer, DefaultTheme, DarkTheme, Theme } from '@react-navi
 import { ThemeProvider, useTheme } from './src/theme';
 import TabNavigator from './src/navigation/TabNavigator';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import * as NavigationBar from 'expo-navigation-bar';
+import { setStatusBarTranslucent } from 'expo-status-bar';
 
 function NavWrapper() {
   const { mode, colors } = useTheme();
@@ -31,6 +33,12 @@ function NavWrapper() {
 }
 
 export default function App() {
+  React.useEffect(() => {
+    NavigationBar.setBackgroundColorAsync('transparent');
+    NavigationBar.setBehaviorAsync('overlay-swipe');
+    setStatusBarTranslucent?.(true);
+  }, []);
+
   return (
     <SafeAreaProvider>
       <ThemeProvider>

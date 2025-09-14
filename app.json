@@ -22,6 +22,17 @@
       },
       "edgeToEdgeEnabled": true
     },
+    "androidNavigationBar": {
+      "visible": "overlay",
+      "translucent": true,
+      "backgroundColor": "transparent",
+      "barStyle": "dark-content"
+    },
+    "androidStatusBar": {
+      "translucent": true,
+      "backgroundColor": "transparent",
+      "barStyle": "dark-content"
+    },
     "web": {
       "favicon": "./assets/favicon.png"
     },

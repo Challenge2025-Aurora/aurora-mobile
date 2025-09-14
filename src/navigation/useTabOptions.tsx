@@ -21,7 +21,7 @@ export function useTabOptions() {
       backgroundColor: colors.bgSecundary,
       borderTopColor: colors.border,
       height: totalHeight,
-      paddingBottom: Math.max(extraHeight, 8),
+      paddingBottom: Math.max(extraHeight, 6),
       paddingTop: 6,
       alignItems: "center",
       justifyContent: "center",
