@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, GestureResponderEvent } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import type { Moto } from '../types/moto';
+import type { Moto } from '../types/domain';
 
 type Props = {
   moto: Moto;

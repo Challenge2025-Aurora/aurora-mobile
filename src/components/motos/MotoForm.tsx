@@ -2,7 +2,7 @@ import { View } from "react-native";
 import { useState } from "react";
 import TextField from "../common/TextField";
 import PrimaryButton from "../common/PrimaryButton";
-import type { Moto } from "../../types/moto";
+import type { Moto } from "../../types/domain";
 
 interface Props {
   defaultValues?: Partial<Moto>;

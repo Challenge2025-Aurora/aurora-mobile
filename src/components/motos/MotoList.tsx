@@ -1,5 +1,5 @@
 import { FlatList, Text, StyleSheet } from "react-native";
-import type { Moto } from "../../types/moto";
+import type { Moto } from "../../types/domain";
 import MotoListItem from "./MotoListItem";
 import EmptyState from "../common/EmptyState";
 

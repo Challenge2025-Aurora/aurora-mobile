@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
-import type { Moto } from "../../types/moto";
+import type { Moto } from "../../types/domain";
 import { useTheme } from "../../theme";
 
 interface Props {

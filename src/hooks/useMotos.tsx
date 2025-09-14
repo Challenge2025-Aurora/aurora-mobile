@@ -1,39 +1,48 @@
-import { useEffect, useState } from "react";
-import type { Moto } from "../types/moto";
-import * as motosStorage from "../storage/moto";
+import * as React from "react";
+import type { Moto, StatusMoto } from "../types/domain";
+import * as api from "../api/motos";
 
-export default function useMotos() {
-  const [motos, setMotos] = useState<Moto[]>([]);
-  const [loading, setLoading] = useState(true);
+export default function useMotos(filters?: { placa?: string; status?: StatusMoto }) {
+  const [motos, setMotos] = React.useState<Moto[]>([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState<string | null>(null);
 
-  useEffect(() => {
-    load();
-  }, []);
+  const load = React.useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const data = await api.listMotos(filters);
+      setMotos(data);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setLoading(false);
+    }
+  }, [filters?.placa, filters?.status]);
 
-  const load = async () => {
-    setLoading(true);
-    const data = await motosStorage.getAll();
-    setMotos(data);
-    setLoading(false);
+  React.useEffect(() => { load(); }, [load]);
+
+  const add = async (m: Omit<Moto, "id"|"atualizadoEm">) => {
+    const novo = await api.createMoto(m as any);
+    setMotos(prev => [novo, ...prev]);
+    return novo;
   };
 
-  const add = async (moto: Moto) => {
-    const updated = [...motos, moto];
-    await motosStorage.setAll(updated);
-    setMotos(updated);
+  const update = async (id: string, patch: Partial<Moto>) => {
+    const before = motos;
+    setMotos(prev => prev.map(x => x.id === id ? { ...x, ...patch } : x));
+    const saved = await api.updateMoto(id, patch);
+    if (!saved) setMotos(before);
+    return saved;
   };
 
-  const update = async (index: number, moto: Moto) => {
-    const updated = motos.map((m, i) => (i === index ? moto : m));
-    await motosStorage.setAll(updated);
-    setMotos(updated);
+  const remove = async (id: string) => {
+    const before = motos;
+    setMotos(prev => prev.filter(x => x.id !== id));
+    const ok = await api.deleteMoto(id);
+    if (!ok) setMotos(before);
+    return ok;
   };
 
-  const remove = async (index: number) => {
-    const updated = motos.filter((_, i) => i !== index);
-    await motosStorage.setAll(updated);
-    setMotos(updated);
-  };
-
-  return { motos, loading, load, add, update, remove };
+  return { motos, loading, error, reload: load, add, update, remove };
 }

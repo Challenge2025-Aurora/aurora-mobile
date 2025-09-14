@@ -2,7 +2,7 @@ import { View, StyleSheet } from "react-native";
 import IconButton from "../common/IconButton";
 import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import MotoCard from "./MotoCard";
-import type { Moto } from "../../types/moto";
+import type { Moto } from "../../types/domain";
 import { useTheme } from "../../theme";
 
 interface Props {

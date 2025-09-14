@@ -1,6 +1,6 @@
 import { Modal, View, StyleSheet } from "react-native";
 import MotoForm from "./MotoForm";
-import type { Moto } from "../../types/moto";
+import type { Moto } from "../../types/domain";
 
 interface Props {
   visible: boolean;

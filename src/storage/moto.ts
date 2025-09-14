@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import type { Moto } from "../types/moto";
+import type { Moto } from "../types/domain";
 
 const KEY = "motos";
 
