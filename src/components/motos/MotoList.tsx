@@ -7,6 +7,8 @@ interface Props {
   data: Moto[];
   onEdit: (moto: Moto, idx: number) => void;
   onDelete: (idx: number) => void;
+  refreshing?: boolean;
+  onRefresh?: () => void;
 }
 
 export default function MotoList({ data, onEdit, onDelete }: Props) {
