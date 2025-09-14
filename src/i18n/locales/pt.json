@@ -2,12 +2,30 @@
   "camera": {
     "permissao_negada": "Permissão da câmera negada.",
     "alerta_foto_titulo": "Foto capturada!",
-    "alerta_foto_mensagem": "A imagem foi salva localmente.\nURI: {{uri}}"
+    "alerta_foto_mensagem": "A imagem foi salva localmente.\nURI: {{uri}}",
+    "erro_titulo": "Erro",
+    "erro_processar": "Não foi possível processar a imagem.",
+    "nao_encontrada_titulo": "Moto não encontrada",
+    "nao_encontrada_msg": "Não encontramos uma moto com essa placa. Deseja cadastrar agora?",
+    "cancelar": "Cancelar",
+    "cadastrar": "Cadastrar",
+    "ok": "Tudo certo!",
+    "detectou": "Detecção registrada para a placa {{placa}}.",
+    "descartar": "Descartar",
+    "confirmar": "Confirmar"
   },
   "detalhes": {
     "carregando": "Carregando...",
     "excluir_titulo": "Excluir moto",
-    "excluir_mensagem": "Tem certeza que deseja excluir esta moto?"
+    "excluir_mensagem": "Tem certeza que deseja excluir esta moto?",
+    "buscar_placa": "Buscar por placa",
+    "todos": "Todos",
+    "disponiveis": "Disponíveis",
+    "manutencao": "Manutenção",
+    "sumidas": "Sumidas",
+    "erro": "Ocorreu um erro",
+    "vazio_titulo": "Nenhuma moto encontrada",
+    "vazio_sub": "Tente ajustar os filtros ou cadastrar uma nova moto."
   },
   "formulario": {
     "salvar": "Salvar"
@@ -17,7 +35,13 @@
     "cadastrar_moto": "Cadastrar Moto",
     "mapa_do_patio": "Mapa do Pátio",
     "camera": "Câmera",
-    "visualizar_motos": "Visualizar Motos"
+    "visualizar_motos": "Visualizar Motos",
+    "operacao": "Operação",
+    "alertas": "Alertas",
+    "inventario": "Inventário",
+    "checkin_checkout": "Check-in/Check-out",
+    "eventos": "Eventos",
+    "editor_planta": "Editor de Planta"
   },
   "language": {
     "pt": "Português",
@@ -30,7 +54,14 @@
     "carregando_localizacao": "Carregando localização...",
     "sem_localizacao": "Sem localização",
     "tente_novamente": "Tente novamente",
-    "voce_esta_aqui": "Você está aqui"
+    "voce_esta_aqui": "Você está aqui",
+    "erro": "Erro ao carregar o mapa do pátio.",
+    "sem_dados": "Sem dados do pátio",
+    "status": "Status",
+    "posicao": "Posição",
+    "buscar_placa": "Buscar placa no mapa",
+    "ver_detalhes": "Ver detalhes",
+    "ok": "OK"
   },
   "outros": {
     "preferencias": "Preferências",
@@ -59,5 +90,65 @@
   "dialogo": {
     "confirmar": "Confirmar",
     "cancelar": "Cancelar"
+  },
+  "operacao": {
+    "titulo": "Operação",
+    "buscar_placa": "Buscar por placa",
+    "eventos": "Eventos recentes",
+    "sem_eventos": "Nenhum evento recente.",
+    "kpi_total": "Total de motos",
+    "kpi_disponiveis": "Disponíveis",
+    "kpi_manutencao": "Em manutenção",
+    "kpi_sumidas": "Sumidas"
+  },
+  "alertas": {
+    "titulo": "Alertas",
+    "detectado_em": "Detectado em",
+    "resolver": "Resolver",
+    "nenhum": "Nenhum alerta no momento."
+  },
+  "inventario": {
+    "titulo": "Inventário por Setor",
+    "setor": "Setor",
+    "quantidade": "Qtd",
+    "capacidade": "Cap.",
+    "ocupacao": "Ocup.",
+    "vazio": "Nenhum dado de inventário disponível."
+  },
+  "eventos": {
+    "titulo": "Eventos",
+    "buscar_placa": "Filtrar por placa",
+    "carregando": "Carregando eventos...",
+    "vazio": "Nenhum evento encontrado.",
+    "placa": "Placa"
+  },
+  "checkio": {
+    "titulo": "Check-in / Check-out",
+    "checkin": "Check-in",
+    "checkout": "Check-out",
+    "placa_ph": "Placa (ex: ABC1D23)",
+    "setor_ph": "Setor (ex: A)",
+    "slot_ph": "Slot (ex: A-12)",
+    "preencher_por_deteccao": "Preencher por detecção",
+    "confirmar": "Confirmar",
+    "ok": "Operação registrada com sucesso.",
+    "detectado_titulo": "Detecção",
+    "detectado_msg": "Placa detectada: {{placa}}",
+    "detectado_vazio": "Nenhuma placa foi detectada.",
+    "erro_deteccao": "Falha ao processar a detecção.",
+    "nao_encontrada": "Não encontramos essa placa para realizar a ação.",
+    "nao_encontrada_titulo": "Moto não encontrada",
+    "sugere_cadastro": "Cadastre a moto na tela de Formulário para continuar.",
+    "placa_obrigatoria": "Informe a placa para continuar."
+  },
+  "editorplanta": {
+    "titulo": "Editor de Planta (Beta)",
+    "em_breve": "EM BREVE",
+    "roadmap": "Desenho de setores/slots, ajuste de grade, salvar layout e sincronizar com a API. Por enquanto, use o Mapa para visualizar."
+  },
+  "commons": {
+    "atencao": "Atenção",
+    "erro": "Erro",
+    "sucesso": "Sucesso"
   }
 }
