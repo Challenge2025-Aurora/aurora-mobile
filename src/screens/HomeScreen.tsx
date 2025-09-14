@@ -3,6 +3,7 @@ import { MaterialCommunityIcons, Feather, Entypo } from "@expo/vector-icons";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { MainStackParamList } from "../navigation/types";
 
+import Screen from "../components/common/Screen";
 import { useTheme } from "../theme/index";
 
 type Props = NativeStackScreenProps<MainStackParamList, "Home">;
@@ -11,9 +12,9 @@ export default function HomeScreen({ navigation }: Props) {
   const { colors } = useTheme();
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.bg }]}>
+    <Screen backgroundColor={colors.bg} padded>
       <Text style={[styles.title, { color: colors.primary }]}>
-        Gestão de Motos - Pátio Mottu
+        Gestão de Motos
       </Text>
 
       <View style={styles.row}>
@@ -40,7 +41,7 @@ export default function HomeScreen({ navigation }: Props) {
             size={32}
             color={colors.primary}
           />
-          <Text style={[styles.label, { color: colors.text }]}>Mapa do Pátio</Text>
+          <Text style={[styles.label, { color: colors.textOnPrimary }]}>Mapa do Pátio</Text>
         </TouchableOpacity>
       </View>
 
@@ -64,10 +65,10 @@ export default function HomeScreen({ navigation }: Props) {
           onPress={() => navigation.navigate("Detalhes")}
         >
           <Entypo name="list" size={32} color={colors.primary} />
-          <Text style={[styles.label, { color: colors.text }]}>Visualizar Motos</Text>
+          <Text style={[styles.label, { color: colors.textOnPrimary }]}>Visualizar Motos</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </Screen>
   );
 }
 
