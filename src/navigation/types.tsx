@@ -11,7 +11,16 @@ export type MainStackParamList = {
 };
 
 export type ProfileStackParamList = { PerfilHome: undefined };
-export type OthersStackParamList  = { OutrosHome: undefined };
+
+export type OthersStackParamList = {
+  OutrosHome: undefined;
+  Idioma: undefined;
+  Tema: undefined;
+  Sobre: undefined;
+  Integrantes: undefined;
+  Tecnologias: undefined;
+  Contato: undefined;
+};
 
 export type RootTabParamList = {
   Main:   NavigatorScreenParams<MainStackParamList>;
@@ -23,3 +32,9 @@ export type MainStackScreenProps<T extends keyof MainStackParamList> =
   NativeStackScreenProps<MainStackParamList, T>;
 export type RootTabScreenProps<T extends keyof RootTabParamList> =
   BottomTabScreenProps<RootTabParamList, T>;
+
+export type OthersStackScreenProps<T extends keyof OthersStackParamList> =
+  NativeStackScreenProps<OthersStackParamList, T>;
+
+export type ProfileStackScreenProps<T extends keyof ProfileStackParamList> =
+  NativeStackScreenProps<ProfileStackParamList, T>;

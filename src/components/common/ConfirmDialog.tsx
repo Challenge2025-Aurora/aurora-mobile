@@ -10,6 +10,16 @@ interface ConfirmDialogProps {
   confirmLabel?: string;
   cancelLabel?: string;
   icon?: ReactNode;
+
+  // novos opcionais para suportar tema
+  overlayColor?: string;
+  dialogBgColor?: string;
+  cancelBgColor?: string;
+  confirmBgColor?: string;
+  titleColor?: string;
+  messageColor?: string;
+  confirmTextColor?: string;
+  cancelTextColor?: string;
 }
 
 export default function ConfirmDialog({
@@ -21,26 +31,42 @@ export default function ConfirmDialog({
   confirmLabel = "Confirmar",
   cancelLabel = "Cancelar",
   icon,
+  overlayColor,
+  dialogBgColor,
+  cancelBgColor,
+  confirmBgColor,
+  titleColor,
+  messageColor,
+  confirmTextColor,
+  cancelTextColor,
 }: ConfirmDialogProps) {
   return (
     <Modal visible={visible} transparent animationType="fade">
-      <View style={styles.overlay}>
-        <View style={styles.dialog}>
-          {icon}
-          <Text style={styles.title}>{title}</Text>
-          <Text style={styles.message}>{message}</Text>
+      <View style={[styles.overlay, overlayColor && { backgroundColor: overlayColor }]}>
+        <View style={[styles.dialog, dialogBgColor && { backgroundColor: dialogBgColor }]}>
+          {icon && <View style={{ marginBottom: 12 }}>{icon}</View>}
+          <Text style={[styles.title, titleColor && { color: titleColor }]}>{title}</Text>
+          <Text style={[styles.message, messageColor && { color: messageColor }]}>{message}</Text>
           <View style={styles.row}>
             <TouchableOpacity
-              style={[styles.btn, styles.cancel]}
+              style={[styles.btn, styles.cancel, cancelBgColor && { backgroundColor: cancelBgColor }]}
               onPress={onCancel}
             >
-              <Text style={styles.btnText}>{cancelLabel}</Text>
+              <Text style={[styles.btnText, cancelTextColor && { color: cancelTextColor }]}>
+                {cancelLabel}
+              </Text>
             </TouchableOpacity>
             <TouchableOpacity
-              style={[styles.btn, styles.confirm]}
+              style={[styles.btn, styles.confirm, confirmBgColor && { backgroundColor: confirmBgColor }]}
               onPress={onConfirm}
             >
-              <Text style={[styles.btnText, styles.confirmText]}>
+              <Text
+                style={[
+                  styles.btnText,
+                  styles.confirmText,
+                  confirmTextColor && { color: confirmTextColor },
+                ]}
+              >
                 {confirmLabel}
               </Text>
             </TouchableOpacity>
@@ -56,10 +82,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "rgba(0,0,0,0.4)",
+    backgroundColor: "rgba(0,0,0,0.4)", // sobrescrito se overlayColor for passado
   },
   dialog: {
-    backgroundColor: "white",
+    backgroundColor: "white", // sobrescrito se dialogBgColor for passado
     padding: 20,
     borderRadius: 12,
     width: "80%",
