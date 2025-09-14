@@ -3,6 +3,7 @@ import { StatusBar } from 'react-native';
 import { NavigationContainer, DefaultTheme, DarkTheme, Theme } from '@react-navigation/native';
 import { ThemeProvider, useTheme } from './src/theme';
 import TabNavigator from './src/navigation/TabNavigator';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 function NavWrapper() {
   const { mode, colors } = useTheme();
@@ -31,8 +32,10 @@ function NavWrapper() {
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <NavWrapper />
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <NavWrapper />
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }

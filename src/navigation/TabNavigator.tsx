@@ -16,17 +16,17 @@ export default function TabNavigator() {
       <Tab.Screen
         name="Main"
         component={HomeStack}
-        options={{ title: 'Início', tabBarIcon: makeIcon('home-variant-outline') }}
+        options={{ tabBarIcon: makeIcon('home-variant-outline') }}
       />
       <Tab.Screen
         name="Perfil"
         component={ProfileStack}
-        options={{ title: 'Perfil', tabBarIcon: makeIcon('account-circle-outline') }}
+        options={{ tabBarIcon: makeIcon('account-circle-outline') }}
       />
       <Tab.Screen
         name="Outros"
         component={OthersStack}
-        options={{ title: 'Outros', tabBarIcon: makeIcon('dots-horizontal-circle-outline') }}
+        options={{ tabBarIcon: makeIcon('dots-horizontal-circle-outline') }}
       />
     </Tab.Navigator>
   );
