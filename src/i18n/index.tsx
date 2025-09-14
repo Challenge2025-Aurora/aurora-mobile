@@ -5,6 +5,8 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from "
 import pt from "./locales/pt.json";
 import en from "./locales/en.json";
 
+import { getLanguage as getStoredLanguage, setLanguage as setStoredLanguage, Lang as StoredLang } from "../storage/language";
+
 export type Lang = "pt" | "en";
 
 const resources = {
@@ -38,14 +40,30 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLang] = useState<Lang>("pt");
 
   useEffect(() => {
-    ensureInit(lang);
+    (async () => {
+      try {
+        const saved: StoredLang = await getStoredLanguage();
+        ensureInit(saved);
+        if (i18n.language !== saved) await i18n.changeLanguage(saved);
+        setLang(saved);
+      } catch {
+        ensureInit("pt");
+        if (i18n.language !== "pt") await i18n.changeLanguage("pt");
+        setLang("pt");
+      }
+    })();
   }, []);
 
   useEffect(() => {
     if (!_initialized) return;
-    if (i18n.language !== lang) {
-      i18n.changeLanguage(lang).catch(() => {});
-    }
+    (async () => {
+      try {
+        await setStoredLanguage(lang);
+      } catch {}
+      if (i18n.language !== lang) {
+        await i18n.changeLanguage(lang);
+      }
+    })();
   }, [lang]);
 
   const toggle = () => setLang((prev) => (prev === "pt" ? "en" : "pt"));

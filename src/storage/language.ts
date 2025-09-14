@@ -1,16 +1,15 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export type Lang = "pt" | "en";
-export type LangMode = Lang | "system";
 
-const KEY = "@lang_mode";
+const KEY = "@lang";
 
-export async function getLanguageMode(): Promise<LangMode> {
+export async function getLanguage(): Promise<Lang> {
   const v = await AsyncStorage.getItem(KEY);
-  if (v === "pt" || v === "en" || v === "system") return v;
-  return "system";
+  return v === "en" || v === "pt" ? (v as Lang) : "pt";
 }
 
-export async function setLanguageMode(mode: LangMode) {
-  await AsyncStorage.setItem(KEY, mode);
+/** Persiste o idioma atual. */
+export async function setLanguage(lang: Lang) {
+  await AsyncStorage.setItem(KEY, lang);
 }
