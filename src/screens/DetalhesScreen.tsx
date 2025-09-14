@@ -8,9 +8,11 @@ import useMotos from "../hooks/useMotos";
 import useBoolean from "../hooks/useBoolean";
 import type { Moto } from "../types/moto";
 import { useTheme } from "../theme";
+import { useTranslation } from "../i18n";
 
 export default function DetalhesScreen() {
   const { colors } = useTheme();
+  const { t } = useTranslation();
   const { motos, loading, update, remove } = useMotos();
 
   const editOpen = useBoolean(false);
@@ -21,7 +23,7 @@ export default function DetalhesScreen() {
   return (
     <Screen backgroundColor={colors.bg} padded>
       {loading ? (
-        <LoadingState title="Carregando..." />
+        <LoadingState title={t("detalhes.carregando")} />
       ) : (
         <MotoList
           data={motos}
@@ -47,8 +49,8 @@ export default function DetalhesScreen() {
 
       <ConfirmDialog
         visible={confirmOpen.value}
-        title="Excluir moto"
-        message="Tem certeza que deseja excluir esta moto?"
+        title={t("detalhes.excluir_titulo")}
+        message={t("detalhes.excluir_mensagem")}
         onCancel={() => {
           confirmOpen.setFalse();
           setToDelete(null);

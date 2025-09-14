@@ -1,0 +1,61 @@
+{
+  "camera": {
+    "permissao_negada": "Permiso de cámara denegado.",
+    "alerta_foto_titulo": "¡Foto capturada!",
+    "alerta_foto_mensagem": "La imagen se guardó localmente.\nURI: {{uri}}"
+  },
+  "detalhes": {
+    "carregando": "Cargando...",
+    "excluir_titulo": "Eliminar moto",
+    "excluir_mensagem": "¿Seguro que desea eliminar esta moto?"
+  },
+  "formulario": {
+    "salvar": "Guardar"
+  },
+  "home": {
+    "titulo": "Gestión de Motos",
+    "cadastrar_moto": "Registrar Moto",
+    "mapa_do_patio": "Mapa del Patio",
+    "camera": "Cámara",
+    "visualizar_motos": "Ver Motos"
+  },
+  "language": {
+    "pt": "Portugués",
+    "en": "Inglés",
+    "es": "Español"
+  },
+  "mapa": {
+    "carregando_localizacao": "Cargando ubicación...",
+    "sem_localizacao": "Sin ubicación",
+    "tente_novamente": "Intentar de nuevo",
+    "voce_esta_aqui": "Estás aquí"
+  },
+  "outros": {
+    "preferencias": "Preferencias",
+    "sobre": "Acerca de",
+    "mudar_idioma": "Cambiar idioma",
+    "mudar_tema": "Cambiar tema",
+    "sobre_o_projeto": "Acerca del proyecto",
+    "integrantes": "Integrantes",
+    "tecnologias_usadas": "Tecnologías usadas",
+    "sair_da_conta": "Cerrar sesión",
+    "entrar": "Iniciar sesión",
+    "confirmar_logout_titulo": "Confirmar cierre de sesión",
+    "confirmar_logout_mensagem": "¿Seguro que quieres cerrar sesión en tu cuenta?",
+    "sair": "Cerrar sesión",
+    "cancelar": "Cancelar"
+  },
+  "tema": {
+    "seguir_sistema": "Seguir el sistema",
+    "ajusta_automaticamente": "Ajusta automáticamente",
+    "claro": "Claro",
+    "escuro": "Oscuro"
+  },
+  "permissoes": {
+    "permissao_negada": "Permiso denegado"
+  },
+  "dialogo": {
+    "confirmar": "Confirmar",
+    "cancelar": "Cancelar"
+  }
+}

@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 import { ReactNode, useEffect } from "react";
+import { useTranslation } from "../../i18n";
 
 interface PermissionGateProps {
   granted?: boolean;
@@ -12,16 +13,19 @@ export default function PermissionGate({
   granted,
   onRequest,
   children,
-  deniedMessage = "Permissão negada",
+  deniedMessage,
 }: PermissionGateProps) {
+  const { t } = useTranslation();
+
   useEffect(() => {
     if (!granted) void onRequest();
   }, [granted, onRequest]);
 
   if (!granted) {
+    const message = deniedMessage ?? t("permissoes.permissao_negada");
     return (
       <View style={styles.center}>
-        <Text style={styles.text}>{deniedMessage}</Text>
+        <Text style={styles.text}>{message}</Text>
       </View>
     );
   }

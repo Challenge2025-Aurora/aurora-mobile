@@ -7,9 +7,11 @@ import CameraPreview from "../components/camera/CameraPreview";
 import CaptureButton from "../components/camera/CaptureButton";
 import useCameraCapture from "../hooks/useCameraCapture";
 import { useTheme } from "../theme";
+import { useTranslation } from "../i18n";
 
 export default function CameraScreen() {
   const { colors } = useTheme();
+  const { t } = useTranslation();
   const [permission, requestPermission] = useCameraPermissions();
   const { cameraRef, capturing, takePicture } = useCameraCapture();
 
@@ -20,7 +22,7 @@ export default function CameraScreen() {
         onRequest={async () => {
           await requestPermission();
         }}
-        deniedMessage="Permissão da câmera negada."
+        deniedMessage={t("camera.permissao_negada")}
       >
         <CameraPreview ref={cameraRef} style={styles.camera} facing="back" />
         <Overlay bottom>
@@ -30,9 +32,8 @@ export default function CameraScreen() {
               const uri = await takePicture();
               if (uri)
                 Alert.alert(
-                  "Foto capturada!",
-                  `A imagem foi salva localmente.
-URI: ${uri}`
+                  t("camera.alerta_foto_titulo"),
+                  t("camera.alerta_foto_mensagem", { uri })
                 );
             }}
           />

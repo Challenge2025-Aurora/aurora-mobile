@@ -1,5 +1,61 @@
 {
-    "language": "Language",
-    "language.pt": "Portuguese",
-    "language.en": "English"
+  "camera": {
+    "permissao_negada": "Camera permission denied.",
+    "alerta_foto_titulo": "Photo captured!",
+    "alerta_foto_mensagem": "The image was saved locally.\nURI: {{uri}}"
+  },
+  "detalhes": {
+    "carregando": "Loading...",
+    "excluir_titulo": "Delete motorcycle",
+    "excluir_mensagem": "Are you sure you want to delete this motorcycle?"
+  },
+  "formulario": {
+    "salvar": "Save"
+  },
+  "home": {
+    "titulo": "Motorcycle Management",
+    "cadastrar_moto": "Register Motorcycle",
+    "mapa_do_patio": "Yard Map",
+    "camera": "Camera",
+    "visualizar_motos": "View Motorcycles"
+  },
+  "language": {
+    "pt": "Portuguese",
+    "en": "English",
+    "es": "Spanish"
+  },
+  "mapa": {
+    "carregando_localizacao": "Loading location...",
+    "sem_localizacao": "No location",
+    "tente_novamente": "Try again",
+    "voce_esta_aqui": "You are here"
+  },
+  "outros": {
+    "preferencias": "Preferences",
+    "sobre": "About",
+    "mudar_idioma": "Change language",
+    "mudar_tema": "Change theme",
+    "sobre_o_projeto": "About the project",
+    "integrantes": "Team",
+    "tecnologias_usadas": "Technologies used",
+    "sair_da_conta": "Log out",
+    "entrar": "Log in",
+    "confirmar_logout_titulo": "Confirm logout",
+    "confirmar_logout_mensagem": "Are you sure you want to log out of your account?",
+    "sair": "Log out",
+    "cancelar": "Cancel"
+  },
+  "tema": {
+    "seguir_sistema": "Follow system",
+    "ajusta_automaticamente": "Adjusts automatically",
+    "claro": "Light",
+    "escuro": "Dark"
+  },
+  "permissoes": {
+    "permissao_negada": "Permission denied"
+  },
+  "dialogo": {
+    "confirmar": "Confirm",
+    "cancelar": "Cancel"
+  }
 }

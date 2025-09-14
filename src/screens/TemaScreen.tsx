@@ -4,6 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTheme } from "../theme";
 import type { OthersStackScreenProps } from "../navigation/types";
 import Screen from "../components/common/Screen";
+import { useTranslation } from "../i18n";
 
 type Option = {
   key: "light" | "dark" | "system";
@@ -14,16 +15,17 @@ type Option = {
 
 export default function TemaScreen(_props: OthersStackScreenProps<"Tema">) {
   const { mode, set, colors } = useTheme();
+  const { t } = useTranslation();
 
   const opts: Option[] = [
     {
       key: "system",
-      title: "Seguir o sistema",
-      subtitle: "Ajusta automaticamente",
+      title: t("tema.seguir_sistema"),
+      subtitle: t("tema.ajusta_automaticamente"),
       icon: "theme-light-dark",
     },
-    { key: "light", title: "Claro", icon: "white-balance-sunny" },
-    { key: "dark", title: "Escuro", icon: "weather-night" },
+    { key: "light", title: t("tema.claro"), icon: "white-balance-sunny" },
+    { key: "dark", title: t("tema.escuro"), icon: "weather-night" },
   ];
 
   return (

@@ -1,17 +1,20 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import React, { createContext, useContext, useEffect, useMemo, useState } from "react";
+import * as Localization from "expo-localization";
 
 import pt from "./locales/pt.json";
 import en from "./locales/en.json";
+import es from "./locales/es.json";
 
 import { getLanguage as getStoredLanguage, setLanguage as setStoredLanguage, Lang as StoredLang } from "../storage/language";
 
-export type Lang = "pt" | "en";
+export type Lang = "pt" | "en" | "es";
 
 const resources = {
   pt: { translation: pt },
   en: { translation: en },
+  es: { translation: es }
 } as const;
 
 let _initialized = false;
@@ -22,7 +25,7 @@ function ensureInit(defaultLng: Lang = "pt") {
     lng: defaultLng,
     fallbackLng: "pt",
     interpolation: { escapeValue: false },
-    returnNull: false,
+    returnNull: false
   });
   _initialized = true;
 }
@@ -42,10 +45,12 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     (async () => {
       try {
-        const saved: StoredLang = await getStoredLanguage();
-        ensureInit(saved);
-        if (i18n.language !== saved) await i18n.changeLanguage(saved);
-        setLang(saved);
+        const saved = (await getStoredLanguage()) as Lang | null;
+        const device = Localization.getLocales?.()[0]?.languageCode ?? "pt";
+        const initial: Lang = saved ?? ((device === "en" || device === "es") ? (device as Lang) : "pt");
+        ensureInit(initial);
+        if (i18n.language !== initial) await i18n.changeLanguage(initial);
+        setLang(initial);
       } catch {
         ensureInit("pt");
         if (i18n.language !== "pt") await i18n.changeLanguage("pt");
@@ -58,7 +63,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     if (!_initialized) return;
     (async () => {
       try {
-        await setStoredLanguage(lang);
+        await setStoredLanguage(lang as unknown as StoredLang);
       } catch {}
       if (i18n.language !== lang) {
         await i18n.changeLanguage(lang);
@@ -66,7 +71,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     })();
   }, [lang]);
 
-  const toggle = () => setLang((prev) => (prev === "pt" ? "en" : "pt"));
+  const toggle = () => setLang((prev) => (prev === "pt" ? "en" : prev === "en" ? "es" : "pt"));
 
   const value = useMemo(() => ({ lang, setLang, toggle, i18n }), [lang]);
 

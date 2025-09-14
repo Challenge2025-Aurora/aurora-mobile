@@ -1,20 +1,37 @@
+import * as React from "react";
+import { useCallback } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { MaterialCommunityIcons, Feather, Entypo } from "@expo/vector-icons";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import type { MainStackParamList } from "../navigation/types";
-
 import Screen from "../components/common/Screen";
 import { useTheme } from "../theme/index";
+import { useTranslation } from "../i18n";
 
 type Props = NativeStackScreenProps<MainStackParamList, "Home">;
 
 export default function HomeScreen({ navigation }: Props) {
   const { colors } = useTheme();
+  const { t } = useTranslation();
+
+  const goFormulario = useCallback(
+    () => navigation.navigate("Formulario"),
+    [navigation]
+  );
+  const goMapa = useCallback(() => navigation.navigate("Mapa"), [navigation]);
+  const goCamera = useCallback(
+    () => navigation.navigate("Camera"),
+    [navigation]
+  );
+  const goDetalhes = useCallback(
+    () => navigation.navigate("Detalhes"),
+    [navigation]
+  );
 
   return (
     <Screen backgroundColor={colors.bg} padded>
       <Text style={[styles.title, { color: colors.primary }]}>
-        Gestão de Motos
+        {t("home.titulo")}
       </Text>
 
       <View style={styles.row}>
@@ -23,10 +40,12 @@ export default function HomeScreen({ navigation }: Props) {
             styles.card,
             { backgroundColor: colors.bgSecundary, shadowColor: colors.shadow },
           ]}
-          onPress={() => navigation.navigate("Formulario")}
+          onPress={goFormulario}
         >
           <Feather name="plus-circle" size={32} color={colors.primary} />
-          <Text style={[styles.label, { color: colors.text }]}>Cadastrar Moto</Text>
+          <Text style={[styles.label, { color: colors.text }]}>
+            {t("home.cadastrar_moto")}
+          </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -34,14 +53,16 @@ export default function HomeScreen({ navigation }: Props) {
             styles.card,
             { backgroundColor: colors.accent, shadowColor: colors.shadow },
           ]}
-          onPress={() => navigation.navigate("Mapa")}
+          onPress={goMapa}
         >
           <MaterialCommunityIcons
             name="map-marker-radius-outline"
             size={32}
             color={colors.bgSecundary}
           />
-          <Text style={[styles.label, { color: colors.bgSecundary }]}>Mapa do Pátio</Text>
+          <Text style={[styles.label, { color: colors.bgSecundary }]}>
+            {t("home.mapa_do_patio")}
+          </Text>
         </TouchableOpacity>
       </View>
 
@@ -51,10 +72,16 @@ export default function HomeScreen({ navigation }: Props) {
             styles.card,
             { backgroundColor: colors.bgSecundary, shadowColor: colors.shadow },
           ]}
-          onPress={() => navigation.navigate("Camera")}
+          onPress={goCamera}
         >
-          <MaterialCommunityIcons name="camera-outline" size={32} color={colors.primary} />
-          <Text style={[styles.label, { color: colors.text }]}>Câmera</Text>
+          <MaterialCommunityIcons
+            name="camera-outline"
+            size={32}
+            color={colors.primary}
+          />
+          <Text style={[styles.label, { color: colors.text }]}>
+            {t("home.camera")}
+          </Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -62,10 +89,12 @@ export default function HomeScreen({ navigation }: Props) {
             styles.card,
             { backgroundColor: colors.accent, shadowColor: colors.shadow },
           ]}
-          onPress={() => navigation.navigate("Detalhes")}
+          onPress={goDetalhes}
         >
           <Entypo name="list" size={32} color={colors.bgSecundary} />
-          <Text style={[styles.label, { color: colors.bgSecundary }]}>Visualizar Motos</Text>
+          <Text style={[styles.label, { color: colors.bgSecundary }]}>
+            {t("home.visualizar_motos")}
+          </Text>
         </TouchableOpacity>
       </View>
     </Screen>
@@ -74,7 +103,12 @@ export default function HomeScreen({ navigation }: Props) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: "center", alignItems: "center" },
-  title: { fontSize: 22, fontWeight: "bold", marginBottom: 36, textAlign: "center" },
+  title: {
+    fontSize: 22,
+    fontWeight: "bold",
+    marginBottom: 36,
+    textAlign: "center",
+  },
   row: { flexDirection: "row", marginBottom: 24 },
   card: {
     flex: 1,

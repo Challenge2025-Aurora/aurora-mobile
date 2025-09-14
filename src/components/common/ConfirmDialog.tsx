@@ -1,5 +1,6 @@
 import { Modal, View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { ReactNode } from "react";
+import { useTranslation } from "../../i18n";
 
 interface ConfirmDialogProps {
   visible: boolean;
@@ -27,8 +28,8 @@ export default function ConfirmDialog({
   message,
   onConfirm,
   onCancel,
-  confirmLabel = "Confirmar",
-  cancelLabel = "Cancelar",
+  confirmLabel,
+  cancelLabel,
   icon,
   overlayColor,
   dialogBgColor,
@@ -39,6 +40,10 @@ export default function ConfirmDialog({
   confirmTextColor,
   cancelTextColor,
 }: ConfirmDialogProps) {
+  const { t } = useTranslation();
+  const cancelText = cancelLabel ?? t("dialogo.cancelar");
+  const confirmText = confirmLabel ?? t("dialogo.confirmar");
+
   return (
     <Modal visible={visible} transparent animationType="fade">
       <View style={[styles.overlay, overlayColor && { backgroundColor: overlayColor }]}>
@@ -52,7 +57,7 @@ export default function ConfirmDialog({
               onPress={onCancel}
             >
               <Text style={[styles.btnText, cancelTextColor && { color: cancelTextColor }]}>
-                {cancelLabel}
+                {cancelText}
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
@@ -66,7 +71,7 @@ export default function ConfirmDialog({
                   confirmTextColor && { color: confirmTextColor },
                 ]}
               >
-                {confirmLabel}
+                {confirmText}
               </Text>
             </TouchableOpacity>
           </View>

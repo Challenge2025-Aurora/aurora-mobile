@@ -1,5 +1,61 @@
 {
-    "language": "Idioma",
-    "language.pt": "Português",
-    "language.en": "Inglês"
+  "camera": {
+    "permissao_negada": "Permissão da câmera negada.",
+    "alerta_foto_titulo": "Foto capturada!",
+    "alerta_foto_mensagem": "A imagem foi salva localmente.\nURI: {{uri}}"
+  },
+  "detalhes": {
+    "carregando": "Carregando...",
+    "excluir_titulo": "Excluir moto",
+    "excluir_mensagem": "Tem certeza que deseja excluir esta moto?"
+  },
+  "formulario": {
+    "salvar": "Salvar"
+  },
+  "home": {
+    "titulo": "Gestão de Motos",
+    "cadastrar_moto": "Cadastrar Moto",
+    "mapa_do_patio": "Mapa do Pátio",
+    "camera": "Câmera",
+    "visualizar_motos": "Visualizar Motos"
+  },
+  "language": {
+    "pt": "Português",
+    "en": "English",
+    "es": "Español"
+  },
+  "mapa": {
+    "carregando_localizacao": "Carregando localização...",
+    "sem_localizacao": "Sem localização",
+    "tente_novamente": "Tente novamente",
+    "voce_esta_aqui": "Você está aqui"
+  },
+  "outros": {
+    "preferencias": "Preferências",
+    "sobre": "Sobre",
+    "mudar_idioma": "Mudar idioma",
+    "mudar_tema": "Mudar tema",
+    "sobre_o_projeto": "Sobre o projeto",
+    "integrantes": "Integrantes",
+    "tecnologias_usadas": "Tecnologias usadas",
+    "sair_da_conta": "Sair da conta",
+    "entrar": "Entrar",
+    "confirmar_logout_titulo": "Confirmar logout",
+    "confirmar_logout_mensagem": "Você tem certeza que deseja sair da sua conta?",
+    "sair": "Sair",
+    "cancelar": "Cancelar"
+  },
+  "tema": {
+    "seguir_sistema": "Seguir o sistema",
+    "ajusta_automaticamente": "Ajusta automaticamente",
+    "claro": "Claro",
+    "escuro": "Escuro"
+  },
+  "permissoes": {
+    "permissao_negada": "Permissão negada"
+  },
+  "dialogo": {
+    "confirmar": "Confirmar",
+    "cancelar": "Cancelar"
+  }
 }

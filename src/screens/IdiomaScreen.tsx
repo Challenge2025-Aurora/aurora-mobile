@@ -7,7 +7,7 @@ import type { OthersStackScreenProps } from "../navigation/types";
 import { useLanguage, useTranslation } from "../i18n";
 
 type Option = {
-  key: "pt" | "en";
+  key: "pt" | "en" | "es";
   title: string;
   subtitle?: string;
   icon: React.ComponentProps<typeof MaterialCommunityIcons>["name"];
@@ -19,16 +19,9 @@ export default function IdiomaScreen(_props: OthersStackScreenProps<"Idioma">) {
   const { t } = useTranslation();
 
   const opts: Option[] = [
-    {
-      key: "pt",
-      title: t("language.pt") || "Português",
-      icon: "alpha-p-circle-outline",
-    },
-    {
-      key: "en",
-      title: t("language.en") || "English",
-      icon: "alpha-e-circle-outline",
-    },
+    { key: "pt", title: t("language.pt"), icon: "alpha-p-circle-outline" },
+    { key: "en", title: t("language.en"), icon: "alpha-e-circle-outline" },
+    { key: "es", title: t("language.es"), icon: "alpha-s-circle-outline" }
   ];
 
   return (
@@ -46,8 +39,8 @@ export default function IdiomaScreen(_props: OthersStackScreenProps<"Idioma">) {
                 {
                   backgroundColor: colors.bgSecundary,
                   borderColor: colors.border,
-                  marginBottom: idx === opts.length - 1 ? 0 : 10,
-                },
+                  marginBottom: idx === opts.length - 1 ? 0 : 10
+                }
               ]}
             >
               <View style={styles.left}>
@@ -86,9 +79,9 @@ const styles = StyleSheet.create({
     borderWidth: StyleSheet.hairlineWidth,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "space-between"
   },
   left: { flexDirection: "row", alignItems: "center" },
   title: { fontSize: 16, fontWeight: "600" },
-  subtitle: { fontSize: 12, marginTop: 2 },
+  subtitle: { fontSize: 12, marginTop: 2 }
 });

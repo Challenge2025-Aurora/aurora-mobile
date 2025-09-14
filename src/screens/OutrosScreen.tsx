@@ -16,6 +16,7 @@ import ConfirmDialog from "../components/common/ConfirmDialog";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useTranslation } from "../i18n";
 
 type RouteName = keyof OthersStackParamList;
 type Item = {
@@ -29,6 +30,7 @@ export default function OutrosScreen({
   navigation,
 }: OthersStackScreenProps<"OutrosHome">) {
   const { colors } = useTheme();
+  const { t } = useTranslation();
   const tabBarHeight = useBottomTabBarHeight();
   const insets = useSafeAreaInsets();
 
@@ -37,40 +39,40 @@ export default function OutrosScreen({
 
   const sections: Array<{ title: string; data: Item[] }> = [
     {
-      title: "Preferências",
+      title: t("outros.preferencias"),
       data: [
         {
           key: "idioma",
-          title: "Mudar idioma",
+          title: t("outros.mudar_idioma"),
           route: "Idioma",
           icon: "translate",
         },
         {
           key: "tema",
-          title: "Mudar tema",
+          title: t("outros.mudar_tema"),
           route: "Tema",
           icon: "theme-light-dark",
         },
       ],
     },
     {
-      title: "Sobre",
+      title: t("outros.sobre"),
       data: [
         {
           key: "sobre",
-          title: "Sobre o projeto",
+          title: t("outros.sobre_o_projeto"),
           route: "Sobre",
           icon: "information-outline",
         },
         {
           key: "integrantes",
-          title: "Integrantes",
+          title: t("outros.integrantes"),
           route: "Integrantes",
           icon: "account-group-outline",
         },
         {
           key: "tecnologias",
-          title: "Tecnologias usadas",
+          title: t("outros.tecnologias_usadas"),
           route: "Tecnologias",
           icon: "tools",
         },
@@ -118,7 +120,7 @@ export default function OutrosScreen({
 
       <Overlay style={{ bottom: bottomOffset }}>
         <PrimaryButton
-          label={logged ? "Sair da conta" : "Entrar"}
+          label={logged ? t("outros.sair_da_conta") : t("outros.entrar")}
           onPress={onPressLoginLogout}
           style={{ width: "90%", backgroundColor: colors.primary }}
         />
@@ -126,12 +128,12 @@ export default function OutrosScreen({
 
       <ConfirmDialog
         visible={confirmVisible}
-        title="Confirmar logout"
-        message="Você tem certeza que deseja sair da sua conta?"
+        title={t("outros.confirmar_logout_titulo")}
+        message={t("outros.confirmar_logout_mensagem")}
         onConfirm={confirmLogout}
         onCancel={() => setConfirmVisible(false)}
-        confirmLabel="Sair"
-        cancelLabel="Cancelar"
+        confirmLabel={t("outros.sair")}
+        cancelLabel={t("outros.cancelar")}
         icon={
           <MaterialCommunityIcons
             name="logout"
