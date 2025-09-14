@@ -5,10 +5,16 @@ import type { Moto } from '../types/domain';
 
 type Props = {
   moto: Moto;
+  patioNome?: string;
   onPress?: (event: GestureResponderEvent) => void;
 };
 
-const MotoCard: React.FC<Props> = ({ moto, onPress }) => {
+const MotoCard: React.FC<Props> = ({ moto, patioNome, onPress }) => {
+  const loc =
+    moto.ultimoSetor || moto.ultimoSlot
+      ? `${moto.ultimoSetor ?? ''}${moto.ultimoSlot ? ` - ${moto.ultimoSlot}` : ''}`
+      : '—';
+
   return (
     <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.9}>
       <View style={styles.row}>
@@ -18,7 +24,10 @@ const MotoCard: React.FC<Props> = ({ moto, onPress }) => {
           <Text style={styles.placa}>{moto.placa}</Text>
         </View>
       </View>
-      <Text style={styles.localizacao}>Pátio: {moto.patio}</Text>
+
+      <Text style={styles.localizacao}>
+        {patioNome ? `Pátio: ${patioNome}` : `Local: ${loc}`}
+      </Text>
     </TouchableOpacity>
   );
 };
