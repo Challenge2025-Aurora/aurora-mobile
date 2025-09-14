@@ -5,12 +5,12 @@ import {
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
-import type { RootStackParamList } from "../navigation/types";
+import type { MainStackParamList } from "../navigation/types";
 import type { Moto } from "../types/moto";
 
 import { useTheme } from "../theme/index";
 
-type Props = NativeStackScreenProps<RootStackParamList, "Formulario">;
+type Props = NativeStackScreenProps<MainStackParamList, "Formulario">;
 
 export default function FormularioScreen({ navigation }: Props) {
   const { colors } = useTheme();

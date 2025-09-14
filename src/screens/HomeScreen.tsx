@@ -1,11 +1,11 @@
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { MaterialCommunityIcons, Feather, Entypo } from "@expo/vector-icons";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
-import type { RootStackParamList } from "../navigation/types";
+import type { MainStackParamList } from "../navigation/types";
 
 import { useTheme } from "../theme/index";
 
-type Props = NativeStackScreenProps<RootStackParamList, "Home">;
+type Props = NativeStackScreenProps<MainStackParamList, "Home">;
 
 export default function HomeScreen({ navigation }: Props) {
   const { colors } = useTheme();
