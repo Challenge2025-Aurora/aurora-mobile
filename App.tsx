@@ -42,11 +42,11 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-        <LanguageProvider>
       <ThemeProvider>
+        <LanguageProvider>
         <NavWrapper />
-      </ThemeProvider>
         </LanguageProvider>
+      </ThemeProvider>
     </SafeAreaProvider>
   );
 }

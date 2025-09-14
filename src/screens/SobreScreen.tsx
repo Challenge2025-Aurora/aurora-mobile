@@ -17,7 +17,7 @@ export default function SobreScreen() {
         Sobre o projeto (placeholder)
       </Text>
       <Text style={{ color: colors.text }}>
-        Coloque aqui um resumo quando for implementar de verdade.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium sequi, minus saepe obcaecati aliquam nemo doloremque fugiat quasi vel non sed expedita accusantium explicabo dignissimos reiciendis quod vero a fugit.
       </Text>
     </View>
   );

@@ -10,7 +10,7 @@ export default function IntegrantesScreen() {
         Integrantes (placeholder)
       </Text>
       <Text style={{ color: colors.text }}>
-        Lista de integrantes do time.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur ratione ad quis rerum. Deserunt, nesciunt distinctio? Quod, rem aperiam nobis, sit officiis velit totam iure architecto provident esse itaque quasi!
       </Text>
     </View>
   );

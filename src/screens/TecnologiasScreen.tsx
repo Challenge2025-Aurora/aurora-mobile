@@ -17,7 +17,7 @@ export default function TecnologiasScreen() {
         Tecnologias usadas (placeholder)
       </Text>
       <Text style={{ color: colors.text }}>
-        React Native, Expo, React Navigation, etc.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut ut non nesciunt tempora, repellendus dicta doloribus placeat amet doloremque voluptates inventore exercitationem quo. Dolorum consequatur aperiam, commodi iusto blanditiis quas?
       </Text>
     </View>
   );
