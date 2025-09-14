@@ -22,7 +22,9 @@
   "language": {
     "pt": "Portuguese",
     "en": "English",
-    "es": "Spanish"
+    "es": "Spanish",
+    "it": "Italian",
+    "fr": "French"
   },
   "mapa": {
     "carregando_localizacao": "Loading location...",

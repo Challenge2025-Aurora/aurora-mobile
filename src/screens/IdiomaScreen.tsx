@@ -7,7 +7,7 @@ import type { OthersStackScreenProps } from "../navigation/types";
 import { useLanguage, useTranslation } from "../i18n";
 
 type Option = {
-  key: "pt" | "en" | "es";
+  key: "pt" | "en" | "es" | "it" | "fr";
   title: string;
   subtitle?: string;
   icon: React.ComponentProps<typeof MaterialCommunityIcons>["name"];
@@ -21,7 +21,9 @@ export default function IdiomaScreen(_props: OthersStackScreenProps<"Idioma">) {
   const opts: Option[] = [
     { key: "pt", title: t("language.pt"), icon: "alpha-p-circle-outline" },
     { key: "en", title: t("language.en"), icon: "alpha-e-circle-outline" },
-    { key: "es", title: t("language.es"), icon: "alpha-s-circle-outline" }
+    { key: "es", title: t("language.es"), icon: "alpha-s-circle-outline" },
+    { key: "it", title: t("language.it"), icon: "alpha-i-circle-outline" },
+    { key: "fr", title: t("language.fr"), icon: "alpha-f-circle-outline" }
   ];
 
   return (

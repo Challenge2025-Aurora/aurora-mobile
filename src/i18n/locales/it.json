@@ -1,0 +1,63 @@
+{
+  "camera": {
+    "permissao_negada": "Autorizzazione della fotocamera negata.",
+    "alerta_foto_titulo": "Foto scattata!",
+    "alerta_foto_mensagem": "L'immagine è stata salvata localmente.\nURI: {{uri}}"
+  },
+  "detalhes": {
+    "carregando": "Caricamento...",
+    "excluir_titulo": "Elimina moto",
+    "excluir_mensagem": "Sei sicuro di voler eliminare questa moto?"
+  },
+  "formulario": {
+    "salvar": "Salva"
+  },
+  "home": {
+    "titulo": "Gestione Moto",
+    "cadastrar_moto": "Registrare moto",
+    "mapa_do_patio": "Mappa del piazzale",
+    "camera": "Fotocamera",
+    "visualizar_motos": "Visualizza moto"
+  },
+  "language": {
+    "pt": "Portoghese",
+    "en": "Inglese",
+    "es": "Spagnolo",
+    "it": "Italiano",
+    "fr": "Francese"
+  },
+  "mapa": {
+    "carregando_localizacao": "Caricamento posizione...",
+    "sem_localizacao": "Nessuna posizione",
+    "tente_novamente": "Riprova",
+    "voce_esta_aqui": "Sei qui"
+  },
+  "outros": {
+    "preferencias": "Preferenze",
+    "sobre": "Informazioni",
+    "mudar_idioma": "Cambiare lingua",
+    "mudar_tema": "Cambiare tema",
+    "sobre_o_projeto": "Informazioni sul progetto",
+    "integrantes": "Membri",
+    "tecnologias_usadas": "Tecnologie utilizzate",
+    "sair_da_conta": "Esci dall'account",
+    "entrar": "Accedi",
+    "confirmar_logout_titulo": "Confermare logout",
+    "confirmar_logout_mensagem": "Sei sicuro di voler uscire dal tuo account?",
+    "sair": "Esci",
+    "cancelar": "Annulla"
+  },
+  "tema": {
+    "seguir_sistema": "Segui il sistema",
+    "ajusta_automaticamente": "Si adatta automaticamente",
+    "claro": "Chiaro",
+    "escuro": "Scuro"
+  },
+  "permissoes": {
+    "permissao_negada": "Autorizzazione negata"
+  },
+  "dialogo": {
+    "confirmar": "Conferma",
+    "cancelar": "Annulla"
+  }
+}

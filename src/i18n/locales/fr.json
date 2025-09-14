@@ -1,0 +1,63 @@
+{
+  "camera": {
+    "permissao_negada": "Autorisation de la caméra refusée.",
+    "alerta_foto_titulo": "Photo prise !",
+    "alerta_foto_mensagem": "L'image a été enregistrée localement.\nURI : {{uri}}"
+  },
+  "detalhes": {
+    "carregando": "Chargement...",
+    "excluir_titulo": "Supprimer la moto",
+    "excluir_mensagem": "Êtes-vous sûr de vouloir supprimer cette moto ?"
+  },
+  "formulario": {
+    "salvar": "Enregistrer"
+  },
+  "home": {
+    "titulo": "Gestion des motos",
+    "cadastrar_moto": "Enregistrer une moto",
+    "mapa_do_patio": "Carte de la cour",
+    "camera": "Caméra",
+    "visualizar_motos": "Voir les motos"
+  },
+  "language": {
+    "pt": "Portugais",
+    "en": "Anglais",
+    "es": "Espagnol",
+    "it": "Italien",
+    "fr": "Français"
+  },
+  "mapa": {
+    "carregando_localizacao": "Chargement de la position...",
+    "sem_localizacao": "Aucune position",
+    "tente_novamente": "Réessayer",
+    "voce_esta_aqui": "Vous êtes ici"
+  },
+  "outros": {
+    "preferencias": "Préférences",
+    "sobre": "À propos",
+    "mudar_idioma": "Changer de langue",
+    "mudar_tema": "Changer de thème",
+    "sobre_o_projeto": "À propos du projet",
+    "integrantes": "Membres",
+    "tecnologias_usadas": "Technologies utilisées",
+    "sair_da_conta": "Se déconnecter",
+    "entrar": "Se connecter",
+    "confirmar_logout_titulo": "Confirmer la déconnexion",
+    "confirmar_logout_mensagem": "Êtes-vous sûr de vouloir vous déconnecter de votre compte ?",
+    "sair": "Se déconnecter",
+    "cancelar": "Annuler"
+  },
+  "tema": {
+    "seguir_sistema": "Suivre le système",
+    "ajusta_automaticamente": "S'ajuste automatiquement",
+    "claro": "Clair",
+    "escuro": "Sombre"
+  },
+  "permissoes": {
+    "permissao_negada": "Autorisation refusée"
+  },
+  "dialogo": {
+    "confirmar": "Confirmer",
+    "cancelar": "Annuler"
+  }
+}
