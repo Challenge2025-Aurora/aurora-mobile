@@ -7,13 +7,14 @@ import {
   StyleSheet,
   Alert,
 } from "react-native";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigation } from "@react-navigation/native";
 import { auth } from "../../firebase/firebaseConfig";
 import { useTheme } from "../../theme";
 import Screen from "../../components/common/Screen";
 
 export default function RegisterScreen() {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigation = useNavigation();
@@ -22,6 +23,9 @@ export default function RegisterScreen() {
   const handleRegister = async () => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(auth.currentUser!, {
+        displayName: name,
+      });
     } catch (error: any) {
       Alert.alert("Erro", error.message);
     }
@@ -30,6 +34,15 @@ export default function RegisterScreen() {
   return (
     <Screen backgroundColor={colors.bg} padded>
       <Text style={[styles.title, { color: colors.primary }]}>Criar Conta</Text>
+      <TextInput
+        style={[
+          styles.input,
+          { backgroundColor: colors.bgSecundary, color: colors.text },
+        ]}
+        placeholder="Nome"
+        placeholderTextColor={colors.placeholder}
+        onChangeText={setName}
+      />
       <TextInput
         style={[
           styles.input,

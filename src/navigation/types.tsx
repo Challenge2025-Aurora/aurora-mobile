@@ -17,7 +17,10 @@ export type MainStackParamList = {
   EditorPlanta: undefined; // talvez eu nem implemente essa
 };
 
-export type ProfileStackParamList = { PerfilHome: undefined };
+export type ProfileStackParamList = { 
+  PerfilHome: undefined,
+  EditarPerfil: undefined
+};
 
 export type OthersStackParamList = {
   OutrosHome: undefined;
