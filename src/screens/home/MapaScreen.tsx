@@ -15,9 +15,9 @@ export default function MapaScreen() {
   const { t } = useTranslation();
   const navigation = useNavigation<NativeStackNavigationProp<MainStackParamList>>();
 
-  const title = (t("mapa.em_breve_titulo") as string) ?? "Em breve";
+  const title = (t("comum.em_breve_titulo") as string) ?? "Em breve";
   const subtitle =
-    (t("mapa.em_breve_subtitulo") as string) ??
+    (t("comum.em_breve_subtitulo") as string) ??
     "Estamos construindo esta funcionalidade. Volte mais tarde!";
 
   return (

@@ -31,7 +31,7 @@ export default function CheckinCheckoutScreen() {
       if (p) setPlaca(p);
       Alert.alert(t("checkio.detectado_titulo"), p ? t("checkio.detectado_msg", { placa: p }) as string : t("checkio.detectado_vazio") as string);
     } catch {
-      Alert.alert(t("commons.erro"), t("checkio.erro_deteccao") as string);
+      Alert.alert(t("comum.erro"), t("checkio.erro_deteccao") as string);
     } finally {
       setLoading(false);
     }
@@ -39,13 +39,13 @@ export default function CheckinCheckoutScreen() {
 
   async function confirmar() {
     const plc = placa.trim().toUpperCase();
-    if (!plc) return Alert.alert(t("commons.atencao"), t("checkio.placa_obrigatoria") as string);
+    if (!plc) return Alert.alert(t("comum.atencao"), t("checkio.placa_obrigatoria") as string);
 
     setLoading(true);
     try {
       const encontrados = await listMotos({ placa: plc });
       if (encontrados.length === 0 && acao === "CHECKOUT") {
-        Alert.alert(t("commons.atencao"), t("checkio.nao_encontrada") as string);
+        Alert.alert(t("comum.atencao"), t("checkio.nao_encontrada") as string);
         return;
       }
 
@@ -72,9 +72,9 @@ export default function CheckinCheckoutScreen() {
 
       setPlaca(""); setSetor(""); setSlot("");
       await reload();
-      Alert.alert(t("commons.sucesso"), t("checkio.ok") as string);
+      Alert.alert(t("comum.sucesso"), t("checkio.ok") as string);
     } catch (e) {
-      Alert.alert(t("commons.erro"), (e as Error).message);
+      Alert.alert(t("comum.erro"), (e as Error).message);
     } finally {
       setLoading(false);
     }
