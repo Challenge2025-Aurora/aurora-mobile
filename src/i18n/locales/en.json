@@ -2,22 +2,58 @@
   "camera": {
     "permissao_negada": "Camera permission denied.",
     "alerta_foto_titulo": "Photo captured!",
-    "alerta_foto_mensagem": "The image was saved locally.\nURI: {{uri}}"
+    "alerta_foto_mensagem": "The image was saved locally.\nURI: {{uri}}",
+    "erro_titulo": "Error",
+    "erro_processar": "Could not process the image.",
+    "nao_encontrada_titulo": "Motorcycle not found",
+    "nao_encontrada_msg": "We couldn't find a motorcycle with that plate. Do you want to register it now?",
+    "cancelar": "Cancel",
+    "cadastrar": "Register",
+    "ok": "All set!",
+    "detectou": "Detection recorded for plate {{placa}}.",
+    "descartar": "Discard",
+    "confirmar": "Confirm"
   },
   "detalhes": {
     "carregando": "Loading...",
     "excluir_titulo": "Delete motorcycle",
-    "excluir_mensagem": "Are you sure you want to delete this motorcycle?"
+    "excluir_mensagem": "Are you sure you want to delete this motorcycle?",
+    "buscar_placa": "Search by plate",
+    "todos": "All",
+    "disponiveis": "Available",
+    "manutencao": "Maintenance",
+    "sumidas": "Missing",
+    "erro": "An error occurred",
+    "vazio_titulo": "No motorcycles found",
+    "vazio_sub": "Try adjusting filters or registering a new motorcycle."
   },
   "formulario": {
-    "salvar": "Save"
+    "salvar": "Save",
+    "titulo": "Register motorcycle",
+    "sub": "Fill in the basic data to register the motorcycle in the yard.",
+    "modelo": "Model",
+    "modelo_ph": "E.g.: Sport 110i",
+    "placa": "Plate",
+    "placa_ph": "E.g.: ABC1D23",
+    "placa_hint": "Use the Mercosur pattern (e.g., ABC1D23).",
+    "setor": "Sector",
+    "setor_ph": "E.g.: A",
+    "slot": "Slot",
+    "slot_ph": "E.g.: A-12",
+    "dica": "You can adjust sector/slot later on the Details screen."
   },
   "home": {
     "titulo": "Motorcycle Management",
     "cadastrar_moto": "Register Motorcycle",
     "mapa_do_patio": "Yard Map",
     "camera": "Camera",
-    "visualizar_motos": "View Motorcycles"
+    "visualizar_motos": "View Motorcycles",
+    "operacao": "Operations",
+    "alertas": "Alerts",
+    "inventario": "Inventory",
+    "checkin_checkout": "Check-in/Check-out",
+    "eventos": "Events",
+    "editor_planta": "Floor Plan Editor"
   },
   "language": {
     "pt": "Portuguese",
@@ -30,7 +66,14 @@
     "carregando_localizacao": "Loading location...",
     "sem_localizacao": "No location",
     "tente_novamente": "Try again",
-    "voce_esta_aqui": "You are here"
+    "voce_esta_aqui": "You are here",
+    "erro": "Error loading the yard map.",
+    "sem_dados": "No yard data",
+    "status": "Status",
+    "posicao": "Position",
+    "buscar_placa": "Search plate on map",
+    "ver_detalhes": "View details",
+    "ok": "OK"
   },
   "outros": {
     "preferencias": "Preferences",
@@ -59,5 +102,68 @@
   "dialogo": {
     "confirmar": "Confirm",
     "cancelar": "Cancel"
+  },
+  "operacao": {
+    "titulo": "Operations",
+    "buscar_placa": "Search by plate",
+    "eventos": "Recent events",
+    "sem_eventos": "No recent events.",
+    "kpi_total": "Total motorcycles",
+    "kpi_disponiveis": "Available",
+    "kpi_manutencao": "Under maintenance",
+    "kpi_sumidas": "Missing"
+  },
+  "alertas": {
+    "titulo": "Alerts",
+    "detectado_em": "Detected at",
+    "resolver": "Resolve",
+    "nenhum": "No alerts at the moment."
+  },
+  "inventario": {
+    "titulo": "Inventory by Sector",
+    "setor": "Sector",
+    "quantidade": "Qty",
+    "capacidade": "Cap.",
+    "ocupacao": "Occ.",
+    "vazio": "No inventory data available."
+  },
+  "eventos": {
+    "titulo": "Events",
+    "buscar_placa": "Filter by plate",
+    "carregando": "Loading events...",
+    "vazio": "No events found.",
+    "placa": "Plate"
+  },
+  "checkio": {
+    "titulo": "Check-in / Check-out",
+    "checkin": "Check-in",
+    "checkout": "Check-out",
+    "placa_ph": "Plate (e.g.: ABC1D23)",
+    "setor_ph": "Sector (e.g.: A)",
+    "slot_ph": "Slot (e.g.: A-12)",
+    "preencher_por_deteccao": "Fill from detection",
+    "confirmar": "Confirm",
+    "ok": "Operation successfully recorded.",
+    "detectado_titulo": "Detection",
+    "detectado_msg": "Detected plate: {{placa}}",
+    "detectado_vazio": "No plate was detected.",
+    "erro_deteccao": "Failed to process detection.",
+    "nao_encontrada": "We couldn't find this plate to perform the action.",
+    "nao_encontrada_titulo": "Motorcycle not found",
+    "sugere_cadastro": "Register the motorcycle on the Form screen to continue.",
+    "placa_obrigatoria": "Enter the plate to continue."
+  },
+  "editorplanta": {
+    "titulo": "Floor Plan Editor (Beta)",
+    "em_breve": "COMING SOON",
+    "roadmap": "Sector/slot drawing, grid adjustment, save layout and sync with the API. For now, use the Map to visualize."
+  },
+  "comum": {
+    "atencao": "Attention",
+    "erro": "Error",
+    "sucesso": "Success",
+    "em_breve_titulo": "COMING SOON",
+    "em_breve_subtitulo": "We're building this feature. Check back later!",
+    "voltar_home": "Go to Home"
   }
 }

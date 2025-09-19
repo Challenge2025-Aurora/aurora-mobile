@@ -2,22 +2,58 @@
   "camera": {
     "permissao_negada": "Permiso de cámara denegado.",
     "alerta_foto_titulo": "¡Foto capturada!",
-    "alerta_foto_mensagem": "La imagen se guardó localmente.\nURI: {{uri}}"
+    "alerta_foto_mensagem": "La imagen se guardó localmente.\nURI: {{uri}}",
+    "erro_titulo": "Error",
+    "erro_processar": "No se pudo procesar la imagen.",
+    "nao_encontrada_titulo": "Moto no encontrada",
+    "nao_encontrada_msg": "No encontramos una moto con esa placa. ¿Deseas registrarla ahora?",
+    "cancelar": "Cancelar",
+    "cadastrar": "Registrar",
+    "ok": "¡Todo listo!",
+    "detectou": "Detección registrada para la placa {{placa}}.",
+    "descartar": "Descartar",
+    "confirmar": "Confirmar"
   },
   "detalhes": {
     "carregando": "Cargando...",
     "excluir_titulo": "Eliminar moto",
-    "excluir_mensagem": "¿Seguro que desea eliminar esta moto?"
+    "excluir_mensagem": "¿Seguro que deseas eliminar esta moto?",
+    "buscar_placa": "Buscar por placa",
+    "todos": "Todos",
+    "disponiveis": "Disponibles",
+    "manutencao": "Mantenimiento",
+    "sumidas": "Desaparecidas",
+    "erro": "Ocurrió un error",
+    "vazio_titulo": "No se encontraron motos",
+    "vazio_sub": "Intenta ajustar los filtros o registrar una nueva moto."
   },
   "formulario": {
-    "salvar": "Guardar"
+    "salvar": "Guardar",
+    "titulo": "Registrar moto",
+    "sub": "Completa los datos básicos para registrar la moto en el patio.",
+    "modelo": "Modelo",
+    "modelo_ph": "Ej.: Sport 110i",
+    "placa": "Placa",
+    "placa_ph": "Ej.: ABC1D23",
+    "placa_hint": "Usa el patrón Mercosur (ej.: ABC1D23).",
+    "setor": "Sector",
+    "setor_ph": "Ej.: A",
+    "slot": "Slot",
+    "slot_ph": "Ej.: A-12",
+    "dica": "Puedes ajustar sector/slot después en la pantalla de Detalles."
   },
   "home": {
     "titulo": "Gestión de Motos",
     "cadastrar_moto": "Registrar Moto",
     "mapa_do_patio": "Mapa del Patio",
     "camera": "Cámara",
-    "visualizar_motos": "Ver Motos"
+    "visualizar_motos": "Ver Motos",
+    "operacao": "Operación",
+    "alertas": "Alertas",
+    "inventario": "Inventario",
+    "checkin_checkout": "Check-in/Check-out",
+    "eventos": "Eventos",
+    "editor_planta": "Editor de Plano"
   },
   "language": {
     "pt": "Portugués",
@@ -30,7 +66,14 @@
     "carregando_localizacao": "Cargando ubicación...",
     "sem_localizacao": "Sin ubicación",
     "tente_novamente": "Intentar de nuevo",
-    "voce_esta_aqui": "Estás aquí"
+    "voce_esta_aqui": "Estás aquí",
+    "erro": "Error al cargar el mapa del patio.",
+    "sem_dados": "Sin datos del patio",
+    "status": "Estado",
+    "posicao": "Posición",
+    "buscar_placa": "Buscar placa en el mapa",
+    "ver_detalhes": "Ver detalles",
+    "ok": "OK"
   },
   "outros": {
     "preferencias": "Preferencias",
@@ -43,7 +86,7 @@
     "sair_da_conta": "Cerrar sesión",
     "entrar": "Iniciar sesión",
     "confirmar_logout_titulo": "Confirmar cierre de sesión",
-    "confirmar_logout_mensagem": "¿Seguro que quieres cerrar sesión en tu cuenta?",
+    "confirmar_logout_mensagem": "¿Seguro que deseas cerrar sesión en tu cuenta?",
     "sair": "Cerrar sesión",
     "cancelar": "Cancelar"
   },
@@ -59,5 +102,68 @@
   "dialogo": {
     "confirmar": "Confirmar",
     "cancelar": "Cancelar"
+  },
+  "operacao": {
+    "titulo": "Operación",
+    "buscar_placa": "Buscar por placa",
+    "eventos": "Eventos recientes",
+    "sem_eventos": "No hay eventos recientes.",
+    "kpi_total": "Total de motos",
+    "kpi_disponiveis": "Disponibles",
+    "kpi_manutencao": "En mantenimiento",
+    "kpi_sumidas": "Desaparecidas"
+  },
+  "alertas": {
+    "titulo": "Alertas",
+    "detectado_em": "Detectado en",
+    "resolver": "Resolver",
+    "nenhum": "No hay alertas por el momento."
+  },
+  "inventario": {
+    "titulo": "Inventario por Sector",
+    "setor": "Sector",
+    "quantidade": "Cant.",
+    "capacidade": "Cap.",
+    "ocupacao": "Ocup.",
+    "vazio": "No hay datos de inventario disponibles."
+  },
+  "eventos": {
+    "titulo": "Eventos",
+    "buscar_placa": "Filtrar por placa",
+    "carregando": "Cargando eventos...",
+    "vazio": "No se encontraron eventos.",
+    "placa": "Placa"
+  },
+  "checkio": {
+    "titulo": "Check-in / Check-out",
+    "checkin": "Check-in",
+    "checkout": "Check-out",
+    "placa_ph": "Placa (ej.: ABC1D23)",
+    "setor_ph": "Sector (ej.: A)",
+    "slot_ph": "Slot (ej.: A-12)",
+    "preencher_por_deteccao": "Rellenar por detección",
+    "confirmar": "Confirmar",
+    "ok": "Operación registrada con éxito.",
+    "detectado_titulo": "Detección",
+    "detectado_msg": "Placa detectada: {{placa}}",
+    "detectado_vazio": "No se detectó ninguna placa.",
+    "erro_deteccao": "Fallo al procesar la detección.",
+    "nao_encontrada": "No encontramos esta placa para realizar la acción.",
+    "nao_encontrada_titulo": "Moto no encontrada",
+    "sugere_cadastro": "Registra la moto en la pantalla de Formulario para continuar.",
+    "placa_obrigatoria": "Ingresa la placa para continuar."
+  },
+  "editorplanta": {
+    "titulo": "Editor de Plano (Beta)",
+    "em_breve": "PRÓXIMAMENTE",
+    "roadmap": "Dibujo de sectores/slots, ajuste de cuadrícula, guardar layout y sincronizar con la API. Por ahora, usa el Mapa para visualizar."
+  },
+  "comum": {
+    "atencao": "Atención",
+    "erro": "Error",
+    "sucesso": "Éxito",
+    "em_breve_titulo": "PRÓXIMAMENTE",
+    "em_breve_subtitulo": "Estamos construyendo esta funcionalidad. ¡Vuelve más tarde!",
+    "voltar_home": "Ir a Home"
   }
 }

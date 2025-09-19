@@ -2,22 +2,58 @@
   "camera": {
     "permissao_negada": "Autorisation de la caméra refusée.",
     "alerta_foto_titulo": "Photo prise !",
-    "alerta_foto_mensagem": "L'image a été enregistrée localement.\nURI : {{uri}}"
+    "alerta_foto_mensagem": "L'image a été enregistrée localement.\nURI : {{uri}}",
+    "erro_titulo": "Erreur",
+    "erro_processar": "Impossible de traiter l'image.",
+    "nao_encontrada_titulo": "Moto introuvable",
+    "nao_encontrada_msg": "Nous n'avons pas trouvé de moto avec cette plaque. Voulez-vous l'enregistrer maintenant ?",
+    "cancelar": "Annuler",
+    "cadastrar": "Enregistrer",
+    "ok": "Tout est prêt !",
+    "detectou": "Détection enregistrée pour la plaque {{placa}}.",
+    "descartar": "Ignorer",
+    "confirmar": "Confirmer"
   },
   "detalhes": {
     "carregando": "Chargement...",
     "excluir_titulo": "Supprimer la moto",
-    "excluir_mensagem": "Êtes-vous sûr de vouloir supprimer cette moto ?"
+    "excluir_mensagem": "Êtes-vous sûr de vouloir supprimer cette moto ?",
+    "buscar_placa": "Rechercher par plaque",
+    "todos": "Tous",
+    "disponiveis": "Disponibles",
+    "manutencao": "Maintenance",
+    "sumidas": "Disparues",
+    "erro": "Une erreur est survenue",
+    "vazio_titulo": "Aucune moto trouvée",
+    "vazio_sub": "Essayez d'ajuster les filtres ou d'enregistrer une nouvelle moto."
   },
   "formulario": {
-    "salvar": "Enregistrer"
+    "salvar": "Enregistrer",
+    "titulo": "Enregistrer une moto",
+    "sub": "Renseignez les données de base pour enregistrer la moto dans la cour.",
+    "modelo": "Modèle",
+    "modelo_ph": "Ex. : Sport 110i",
+    "placa": "Plaque",
+    "placa_ph": "Ex. : ABC1D23",
+    "placa_hint": "Utilisez le format Mercosur (ex. : ABC1D23).",
+    "setor": "Secteur",
+    "setor_ph": "Ex. : A",
+    "slot": "Emplacement",
+    "slot_ph": "Ex. : A-12",
+    "dica": "Vous pourrez ajuster secteur/emplacement plus tard dans l'écran Détails."
   },
   "home": {
     "titulo": "Gestion des motos",
     "cadastrar_moto": "Enregistrer une moto",
     "mapa_do_patio": "Carte de la cour",
     "camera": "Caméra",
-    "visualizar_motos": "Voir les motos"
+    "visualizar_motos": "Voir les motos",
+    "operacao": "Opérations",
+    "alertas": "Alertes",
+    "inventario": "Inventaire",
+    "checkin_checkout": "Check-in/Check-out",
+    "eventos": "Événements",
+    "editor_planta": "Éditeur de plan"
   },
   "language": {
     "pt": "Portugais",
@@ -30,7 +66,14 @@
     "carregando_localizacao": "Chargement de la position...",
     "sem_localizacao": "Aucune position",
     "tente_novamente": "Réessayer",
-    "voce_esta_aqui": "Vous êtes ici"
+    "voce_esta_aqui": "Vous êtes ici",
+    "erro": "Erreur lors du chargement de la carte de la cour.",
+    "sem_dados": "Aucune donnée de cour",
+    "status": "Statut",
+    "posicao": "Position",
+    "buscar_placa": "Rechercher une plaque sur la carte",
+    "ver_detalhes": "Voir les détails",
+    "ok": "OK"
   },
   "outros": {
     "preferencias": "Préférences",
@@ -59,5 +102,68 @@
   "dialogo": {
     "confirmar": "Confirmer",
     "cancelar": "Annuler"
+  },
+  "operacao": {
+    "titulo": "Opérations",
+    "buscar_placa": "Rechercher par plaque",
+    "eventos": "Événements récents",
+    "sem_eventos": "Aucun événement récent.",
+    "kpi_total": "Total de motos",
+    "kpi_disponiveis": "Disponibles",
+    "kpi_manutencao": "En maintenance",
+    "kpi_sumidas": "Disparues"
+  },
+  "alertas": {
+    "titulo": "Alertes",
+    "detectado_em": "Détecté le",
+    "resolver": "Résoudre",
+    "nenhum": "Aucune alerte pour le moment."
+  },
+  "inventario": {
+    "titulo": "Inventaire par secteur",
+    "setor": "Secteur",
+    "quantidade": "Qté",
+    "capacidade": "Cap.",
+    "ocupacao": "Occ.",
+    "vazio": "Aucune donnée d'inventaire disponible."
+  },
+  "eventos": {
+    "titulo": "Événements",
+    "buscar_placa": "Filtrer par plaque",
+    "carregando": "Chargement des événements...",
+    "vazio": "Aucun événement trouvé.",
+    "placa": "Plaque"
+  },
+  "checkio": {
+    "titulo": "Check-in / Check-out",
+    "checkin": "Check-in",
+    "checkout": "Check-out",
+    "placa_ph": "Plaque (ex. : ABC1D23)",
+    "setor_ph": "Secteur (ex. : A)",
+    "slot_ph": "Emplacement (ex. : A-12)",
+    "preencher_por_deteccao": "Renseigner par détection",
+    "confirmar": "Confirmer",
+    "ok": "Opération enregistrée avec succès.",
+    "detectado_titulo": "Détection",
+    "detectado_msg": "Plaque détectée : {{placa}}",
+    "detectado_vazio": "Aucune plaque détectée.",
+    "erro_deteccao": "Échec du traitement de la détection.",
+    "nao_encontrada": "Nous n'avons pas trouvé cette plaque pour effectuer l'action.",
+    "nao_encontrada_titulo": "Moto introuvable",
+    "sugere_cadastro": "Enregistrez la moto dans l'écran Formulaire pour continuer.",
+    "placa_obrigatoria": "Indiquez la plaque pour continuer."
+  },
+  "editorplanta": {
+    "titulo": "Éditeur de plan (Bêta)",
+    "em_breve": "PROCHAINEMENT",
+    "roadmap": "Dessin des secteurs/emplacements, réglage de la grille, sauvegarde du plan et synchronisation avec l'API. Pour l'instant, utilisez la Carte pour visualiser."
+  },
+  "comum": {
+    "atencao": "Attention",
+    "erro": "Erreur",
+    "sucesso": "Succès",
+    "em_breve_titulo": "PROCHAINEMENT",
+    "em_breve_subtitulo": "Nous construisons cette fonctionnalité. Revenez plus tard !",
+    "voltar_home": "Aller à l'accueil"
   }
 }

@@ -2,22 +2,58 @@
   "camera": {
     "permissao_negada": "Autorizzazione della fotocamera negata.",
     "alerta_foto_titulo": "Foto scattata!",
-    "alerta_foto_mensagem": "L'immagine è stata salvata localmente.\nURI: {{uri}}"
+    "alerta_foto_mensagem": "L'immagine è stata salvata localmente.\nURI: {{uri}}",
+    "erro_titulo": "Errore",
+    "erro_processar": "Impossibile elaborare l'immagine.",
+    "nao_encontrada_titulo": "Moto non trovata",
+    "nao_encontrada_msg": "Non abbiamo trovato una moto con quella targa. Vuoi registrarla ora?",
+    "cancelar": "Annulla",
+    "cadastrar": "Registrare",
+    "ok": "Tutto pronto!",
+    "detectou": "Rilevamento registrato per la targa {{placa}}.",
+    "descartar": "Ignora",
+    "confirmar": "Conferma"
   },
   "detalhes": {
     "carregando": "Caricamento...",
     "excluir_titulo": "Elimina moto",
-    "excluir_mensagem": "Sei sicuro di voler eliminare questa moto?"
+    "excluir_mensagem": "Sei sicuro di voler eliminare questa moto?",
+    "buscar_placa": "Cerca per targa",
+    "todos": "Tutte",
+    "disponiveis": "Disponibili",
+    "manutencao": "Manutenzione",
+    "sumidas": "Smarrite",
+    "erro": "Si è verificato un errore",
+    "vazio_titulo": "Nessuna moto trovata",
+    "vazio_sub": "Prova a regolare i filtri o a registrare una nuova moto."
   },
   "formulario": {
-    "salvar": "Salva"
+    "salvar": "Salva",
+    "titulo": "Registrare moto",
+    "sub": "Compila i dati di base per registrare la moto nel piazzale.",
+    "modelo": "Modello",
+    "modelo_ph": "Es.: Sport 110i",
+    "placa": "Targa",
+    "placa_ph": "Es.: ABC1D23",
+    "placa_hint": "Usa lo schema Mercosur (es.: ABC1D23).",
+    "setor": "Settore",
+    "setor_ph": "Es.: A",
+    "slot": "Posto",
+    "slot_ph": "Es.: A-12",
+    "dica": "Puoi regolare settore/posto in seguito dalla schermata Dettagli."
   },
   "home": {
     "titulo": "Gestione Moto",
     "cadastrar_moto": "Registrare moto",
     "mapa_do_patio": "Mappa del piazzale",
     "camera": "Fotocamera",
-    "visualizar_motos": "Visualizza moto"
+    "visualizar_motos": "Visualizza moto",
+    "operacao": "Operazioni",
+    "alertas": "Avvisi",
+    "inventario": "Inventario",
+    "checkin_checkout": "Check-in/Check-out",
+    "eventos": "Eventi",
+    "editor_planta": "Editor della Pianta"
   },
   "language": {
     "pt": "Portoghese",
@@ -30,7 +66,14 @@
     "carregando_localizacao": "Caricamento posizione...",
     "sem_localizacao": "Nessuna posizione",
     "tente_novamente": "Riprova",
-    "voce_esta_aqui": "Sei qui"
+    "voce_esta_aqui": "Sei qui",
+    "erro": "Errore durante il caricamento della mappa del piazzale.",
+    "sem_dados": "Nessun dato del piazzale",
+    "status": "Stato",
+    "posicao": "Posizione",
+    "buscar_placa": "Cerca targa sulla mappa",
+    "ver_detalhes": "Vedi dettagli",
+    "ok": "OK"
   },
   "outros": {
     "preferencias": "Preferenze",
@@ -59,5 +102,68 @@
   "dialogo": {
     "confirmar": "Conferma",
     "cancelar": "Annulla"
+  },
+  "operacao": {
+    "titulo": "Operazioni",
+    "buscar_placa": "Cerca per targa",
+    "eventos": "Eventi recenti",
+    "sem_eventos": "Nessun evento recente.",
+    "kpi_total": "Totale moto",
+    "kpi_disponiveis": "Disponibili",
+    "kpi_manutencao": "In manutenzione",
+    "kpi_sumidas": "Smarrite"
+  },
+  "alertas": {
+    "titulo": "Avvisi",
+    "detectado_em": "Rilevato il",
+    "resolver": "Risolvi",
+    "nenhum": "Nessun avviso al momento."
+  },
+  "inventario": {
+    "titulo": "Inventario per Settore",
+    "setor": "Settore",
+    "quantidade": "Qtà",
+    "capacidade": "Cap.",
+    "ocupacao": "Occ.",
+    "vazio": "Nessun dato di inventario disponibile."
+  },
+  "eventos": {
+    "titulo": "Eventi",
+    "buscar_placa": "Filtra per targa",
+    "carregando": "Caricamento eventi...",
+    "vazio": "Nessun evento trovato.",
+    "placa": "Targa"
+  },
+  "checkio": {
+    "titulo": "Check-in / Check-out",
+    "checkin": "Check-in",
+    "checkout": "Check-out",
+    "placa_ph": "Targa (es.: ABC1D23)",
+    "setor_ph": "Settore (es.: A)",
+    "slot_ph": "Posto (es.: A-12)",
+    "preencher_por_deteccao": "Compila da rilevamento",
+    "confirmar": "Conferma",
+    "ok": "Operazione registrata con successo.",
+    "detectado_titulo": "Rilevamento",
+    "detectado_msg": "Targa rilevata: {{placa}}",
+    "detectado_vazio": "Nessuna targa rilevata.",
+    "erro_deteccao": "Elaborazione del rilevamento non riuscita.",
+    "nao_encontrada": "Non abbiamo trovato questa targa per eseguire l'azione.",
+    "nao_encontrada_titulo": "Moto non trovata",
+    "sugere_cadastro": "Registra la moto nella schermata Modulo per continuare.",
+    "placa_obrigatoria": "Inserisci la targa per continuare."
+  },
+  "editorplanta": {
+    "titulo": "Editor della Pianta (Beta)",
+    "em_breve": "IN ARRIVO",
+    "roadmap": "Disegno di settori/posti, regolazione griglia, salvataggio layout e sincronizzazione con l'API. Per ora usa la Mappa per visualizzare."
+  },
+  "comum": {
+    "atencao": "Attenzione",
+    "erro": "Errore",
+    "sucesso": "Successo",
+    "em_breve_titulo": "IN ARRIVO",
+    "em_breve_subtitulo": "Stiamo costruendo questa funzionalità. Torna più tardi!",
+    "voltar_home": "Vai alla Home"
   }
 }
