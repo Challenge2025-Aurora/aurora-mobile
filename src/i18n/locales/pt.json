@@ -161,6 +161,9 @@
   "commons": {
     "atencao": "Atenção",
     "erro": "Erro",
-    "sucesso": "Sucesso"
+    "sucesso": "Sucesso",
+    "em_breve":"EM BREVE",
+    "em_breve_subtitulo":"Estamos construindo esta funcionalidade. Volte mais tarde!",
+    "voltar_home": "Ir para a Home"
   }
 }
