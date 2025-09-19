@@ -7,7 +7,7 @@ export type MainStackParamList = {
   Camera: undefined;
   Formulario: undefined;
   Detalhes: undefined;
-  Mapa: undefined;
+  Mapa: undefined; // nao sei implementar ainda aaaa
 
   Operacao: undefined;
   Alertas: undefined;
