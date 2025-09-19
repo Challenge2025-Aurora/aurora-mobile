@@ -28,7 +28,19 @@
     "vazio_sub": "Tente ajustar os filtros ou cadastrar uma nova moto."
   },
   "formulario": {
-    "salvar": "Salvar"
+    "salvar": "Salvar",
+    "titulo": "Cadastrar moto",
+    "sub": "Preencha os dados básicos para cadastrar a moto no pátio.",
+    "modelo": "Modelo",
+    "modelo_ph": "Ex: Sport 110i",
+    "placa": "Placa",
+    "placa_ph": "Ex: ABC1D23",
+    "placa_hint": "Use o padrão Mercosul (ex.: ABC1D23).",
+    "setor": "Setor",
+    "setor_ph": "Ex: A",
+    "slot": "Slot",
+    "slot_ph": "Ex: A-12",
+    "dica": "Você pode ajustar setor/slot depois pela tela de Detalhes."
   },
   "home": {
     "titulo": "Gestão de Motos",
@@ -149,6 +161,9 @@
   "commons": {
     "atencao": "Atenção",
     "erro": "Erro",
-    "sucesso": "Sucesso"
+    "sucesso": "Sucesso",
+    "em_breve":"EM BREVE",
+    "em_breve_subtitulo":"Estamos construindo esta funcionalidade. Volte mais tarde!",
+    "voltar_home": "Ir para a Home"
   }
 }

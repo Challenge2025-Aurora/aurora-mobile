@@ -9,7 +9,7 @@ export type Moto = {
   fotoUrl?: string;
   ultimoSetor?: string;
   ultimoSlot?: string;
-  atualizadoEm: string; // ISO
+  atualizadoEm: string;
 };
 
 export type EventoTipo = "CHECKIN" | "CHECKOUT" | "MOVE" | "STATUS" | "DETECCAO";
