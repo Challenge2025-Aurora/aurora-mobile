@@ -1,21 +1,45 @@
-# Aurora Mobile
+# AuroraTrace - Challenge FIAP 2025
 
-Aplicativo desenvolvido para o Challenge 2025 (FIAP), com foco em auxiliar no mapeamento inteligente do pátio e na gestão das motos da Mottu.
+---
 
-## 🔧 Tecnologias
+## Visão Geral da Solução
+
+Nossa solução é uma aplicação completa para gerenciar as motos dentro dos pátios da Mottu, controlando em que setor elas estão, seus status (Disponível, Manutenção, Ocupada) e seus eventos de entrada/saída.
+
+A solução é composta por três repositórios principais:
+
+| Repositório | Tecnologia | URL                                                                                   |
+| :--- | :--- |:--------------------------------------------------------------------------------------|
+| **Mobile App** | React Native/Expo | [Mobile](https://github.com/Challenge2025-Aurora/aurora-mobile)                       |
+| **API Java** | Spring Boot | [Java](https://github.com/Challenge2025-Aurora/challenge2025-java) (Este Repositório) |
+| **API C#** | .NET Core | [C#](https://github.com/Challenge2025-Aurora/aurora-cs)                               |
+
+## Integrantes do Grupo
+
+- **Felipe Prometti** - RM555174 - 2TDSPM
+- **Maria Eduarda Pires** - RM558976 - 2TDSPZ
+- **Samuel Damasceno** - RM558876 - 2TDSPM
+
+## Tecnologias
 
 - React Native com Expo
-- React Navigation
+- TypeScript
+- Firebase
+- React Query (TanStack Query)
 - AsyncStorage
+- React Navigation
+- i18n
+- Expo Vector Icons
+- Expo Camera, Image Picker, Location, Notifications & React Native Maps
 
-## 📱 Funcionalidades
+## Funcionalidades
 
-- Navegação entre telas (mínimo de 5 rotas)
-- Protótipo visual funcional
-- Formulário com manipulação de estado
-- Armazenamento local com AsyncStorage
+- Formulários com manipulação de estado e armazenamento
+- Sistema de autenticação (login, cadastro, logout) com Firebase
+- Navegação entre páginas e seções fluida (mais de 15 rotas)
+- Tema claro/escuro e suporte a mais de dois idiomas
 
-## 🚀 Como rodar o projeto
+## Como rodar o projeto
 
 1. Clone o repositório:
 ```bash
@@ -33,12 +57,4 @@ npm install
 npx expo start
 ```
 
-## 👥 Integrantes
-
-- Felipe Menezes Prometti - RM555174 - 2TDSPM
-- Maria Eduarda Pires Vieira - RM558976 - 2TDSPZ
-- Samuel Damasceno - RM558876 - 2TDSPM
-
 ---
-
-Projeto feito como parte do curso de Análise e Desenvolvimento de Sistemas – 2º ano (2TDS).
