@@ -4,13 +4,13 @@
     "slug": "aurora-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/logomoto.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FFFFFF"
     },
     "ios": {
       "supportsTablet": true
@@ -18,19 +18,17 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FFFFFF"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.mobile.auroratrace"
     },
     "androidNavigationBar": {
-      "visible": "overlay",
-      "translucent": true,
-      "backgroundColor": "transparent",
-      "barStyle": "dark-content"
+      "backgroundColor": "#000000",
+      "visible": "sticky-immersive"
     },
     "androidStatusBar": {
-      "translucent": true,
-      "backgroundColor": "transparent",
+      "backgroundColor": "#000000",
       "barStyle": "dark-content"
     },
     "web": {
@@ -41,6 +39,11 @@
       "expo-font",
       "expo-localization",
       "expo-web-browser"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e5e2a2ff-aa4d-41df-9fc7-03f1c56b4567"
+      }
+    }
   }
 }
